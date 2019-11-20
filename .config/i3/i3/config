@@ -1,0 +1,281 @@
+#### i3 config ############################################################################################
+set $mod Mod4
+#set $mod Mod1
+#font pango:Hermit Bold 8
+font pango:Source Code Prot Bold 8
+# boarder style for new window
+new_window pixel 5
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+#new_window 1pixel 
+new_float 1pixel
+floating_minimum_size 10 x 10
+
+# gaps
+for_window [class="^.*"] border pixel $BORDER_SIZE
+gaps inner 10
+gaps outer 5
+
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+
+smart_borders on
+
+#border style for new window
+new_window pixel 3 
+new_float pixel 3
+
+#automatic switch
+workspace_auto_back_and_forth yes
+
+force_display_urgency_hint 500 ms
+
+# ASSIGN WORKSPACE VARIABLES
+set $WS1 01
+set $WS2 02
+set $WS3 03
+set $WS4 04
+set $WS5 05
+set $WS6 06
+set $WS7 07
+set $WS8 08
+set $WS9 09
+set $WS10 10
+#### i3 config ############################################################################################
+
+
+
+#### Bind Keys ############################################################################################
+bindsym --release $mod+m exec "sh ~/.config/i3/screenshot.sh"
+# kill focused window
+bindsym $mod+Shift+q kill 
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer set Master 5%- unmute
+bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+bindsym XF86AudioPrev exec  "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+bindsym XF86AudioNext exec  "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
+bindsym $mod+Delete exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym $mod+Home exec  "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+bindsym $mod+End exec  "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+bindsym $mod+Page_Up exec "amixer set Master 5%+ unmute"
+bindsym $mod+Page_Down exec "amixer set Master 5%- unmute"
+
+
+bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+a exec --no-startup-id rofi -show window
+
+bindsym $mod+Return exec termite 
+
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+bindsym $mod+Shift+n move scratchpad
+bindsym $mod+n scratchpad show
+
+# change focus
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+h focus left
+bindsym $mod+l focus right
+
+
+#exec --no-startup-id ~/.config/i3/last_window.sh
+bindsym $mod+m [con_mark=_last] focus
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+x mode "$mode_system"
+set $mode_system System (l) lock, (s) suspend, (r) reboot, (e) logout, (x) shutdown 
+
+# move to workspace left/right
+bindsym Mod1+Tab focus left
+bindsym Mod1+Shift+Tab focus down
+#bindsym $mod+Tab workspace back_and_forth
+
+bindsym $mod+bracketright workspace next
+bindsym $mod+bracketleft workspace prev
+bindsym $mod+Shift+bracketright   move container to workspace next
+bindsym $mod+Shift+bracketleft  move container to workspace prev
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+#move workspace to top/down monitor
+#move workspace to output left|right|down|up|current|primary|<output>
+bindsym $mod+Shift+M move workspace to output left
+#bindsym $mod+Shift+D move workspace to output down
+
+# split in horizontal orientation
+bindsym $mod+shift+v split v
+
+# split in vertical orientation
+bindsym $mod+v split h
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+y layout toggle all
+
+# Toggle floating/tiling
+bindsym $mod+t floating toggle
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+# focus the parent container
+bindsym $mod+p focus parent
+#border changing
+bindsym $mod+b border toggle
+# focus the child container
+bindsym $mod+c focus child
+
+# switch to workspace
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $WS1
+bindsym $mod+Shift+2 move container to workspace $WS2
+bindsym $mod+Shift+3 move container to workspace $WS3
+bindsym $mod+Shift+4 move container to workspace $WS4
+bindsym $mod+Shift+5 move container to workspace $WS5
+bindsym $mod+Shift+6 move container to workspace $WS6
+bindsym $mod+Shift+7 move container to workspace $WS7
+bindsym $mod+Shift+8 move container to workspace $WS8
+bindsym $mod+Shift+9 move container to workspace $WS9
+bindsym $mod+Shift+0 move container to workspace $WS10
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+r mode "resize"
+bindsym XF86MonBrightnessDown exec "light -U 5"
+bindsym XF86MonBrightnessUp exec "light -A 5"
+#### Bind Keys ############################################################################################
+
+
+#### i3 modes ############################################################################################
+# resize window (you can also use the mouse for that)
+mode "resize" {
+
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_system" {
+
+    bindsym l exec "~/.config/i3/lock.sh"
+    bindsym x exec "systemctl poweroff"
+    bindsym r exec "systemctl reboot"
+    bindsym s exec "systemctl suspend && ~/.config/i3/lock.sh"
+    bindsym e exec i3-msg exit
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+#### i3 modes ############################################################################################
+           
+
+##### Start Up ############################################################################################
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec dunst &
+#exec redshift &
+exec keepassxc &
+exec zim &
+exec termite &
+exec setxkbmap -layout "us,it" -variant "intl," -option "grp:alt_shift_toggle" &
+exec_always --no-startup-id sh ~/.fehbg
+exec compton --config .config/compton.conf -b 
+exec --no-startup-id /usr/bin/xset b off
+exec --no-startup-id redshift -l 45.4:9.18
+##### Start Up ############################################################################################
+
+
+##### Rules ############################################################################################
+## Rules Assign foo to workspaces  using xprop for determinate program class
+#assign [class="Firefox"] $WS2
+#assign [class="rdesktop"] floating disable, $WS10
+#for_window [class="^rdesktop"] move workspace number 5; floating disable
+for_window [class="^rdesktop"] floating disable,move workspace $WS5
+##### Rules ############################################################################################
+
+
+##### colors ############################################################################################
+client.focused #0088CC #0088CC #ffffff #dddddd
+client.focused_inactive #333333 #333333 #888888 #292d2e
+client.unfocused #333333 #333333 #888888 #292d2e
+client.urgent #2f343a #900000 #ffffff #900000
+##### colors ############################################################################################
+

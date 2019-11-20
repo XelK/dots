@@ -1,0 +1,9 @@
+[NotebookList]
+Default=
+1=~/mega/zim/ZimWiki
+
+[Notebook 1]
+uri=~/mega/zim/ZimWiki
+name=ZimWiki
+interwiki=None
+icon=None
