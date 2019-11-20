@@ -22,10 +22,10 @@ URxvt*background: Black
 URxvt*foreground: White
 URxvt*colorUL: yellow
 URxvt*underlineColor: yellow
-URxvt*font: -xos4-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:pixelsize:12
-URxvt*boldFont: -xos4-terminus-bold-*-*-*-14-*-*-*-*-*-iso8859-15,xft:terminus:bold:pixelsize:12
-URxvt*italicFont: xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12
-URxvt*boldItalicFont: xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12
+URxvt*font: xft:SourceCodePro-Regular:pixelsize:12
+URxvt*boldFont: xft:SourceCodePro-Bold:bold:pixelsize:12
+URxvt*italicFont: xft:SourceCodeVariable-Italic:pixelsize=12
+URxvt*boldItalicFont: xft:SourceCodeVariable-Italic:pixelsize=12
 URxvt*saveLines: 0
 URxvt*buffered: true
 URxvt*hold: false
