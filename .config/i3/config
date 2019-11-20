@@ -68,7 +68,8 @@ bindsym $mod+Page_Down exec "amixer set Master 5%- unmute"
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+a exec --no-startup-id rofi -show window
 
-bindsym $mod+Return exec termite 
+#bindsym $mod+Return exec termite 
+bindsym $mod+Return exec urxvt 
 
 bindsym $mod+Shift+g mode "$mode_gaps"
 
