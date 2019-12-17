@@ -1,0 +1,53 @@
+SCRIPT_DIR=$HOME/.config/i3blocks
+
+#[click]
+#full_text=Click me!
+#command=echo "Got clicked with button $button"
+#color=#F79494
+
+[spotify]
+command=$HOME/.config/i3blocks/spotify_now_playing
+interval=60
+
+# Guess the weather hourly
+[weather]
+command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+interval=3600
+color=#A4C2F4
+
+[wifi]
+command=$HOME/.config/i3blocks/wifi
+label=wifi:
+INTERFACE=wlp0s20f3
+interval=60
+
+
+# Query my default IP address only on startup
+[ip]
+#command=hostname -i | awk '{ print "IP:" $1 }'
+command=curl -Ss ifconfig.me/all|grep ip_addr|awk '{print $2}'
+interval=600
+color=#91E78B
+
+[battery]
+command=$HOME/.config/i3blocks/battery
+interval=30
+#LABEL=BAT
+#BAT_NUMBER=0
+LABEL=⚡ 
+
+
+[volume]
+command=$HOME/.config/i3blocks/volume
+LABEL=♪: 
+#LABEL=VOL
+interval=once
+signal=10
+#STEP=5%
+#MIXER=[determined automatically]
+#SCONTROL=[determined automatically]
+
+# Update time every 5 seconds
+[time]
+command=date +"%H:%M"-"%y/%m/%d"
+interval=5
