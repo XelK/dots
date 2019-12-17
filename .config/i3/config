@@ -1,7 +1,6 @@
 #### i3 config ############################################################################################
 set $mod Mod4
 #set $mod Mod1
-#font pango:Hermit Bold 8
 font pango:Source Code Prot Bold 8
 # boarder style for new window
 new_window pixel 5
@@ -68,8 +67,7 @@ bindsym $mod+Page_Down exec "amixer set Master 5%- unmute"
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+a exec --no-startup-id rofi -show window
 
-#bindsym $mod+Return exec termite 
-bindsym $mod+Return exec urxvt 
+bindsym $mod+Return exec termite 
 
 bindsym $mod+Shift+g mode "$mode_gaps"
 
@@ -250,13 +248,22 @@ mode "$mode_gaps_outer" {
            
 
 ##### Start Up ############################################################################################
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+## finds out, if available)
+bar {
+         status_command i3status
+}
+
+
 exec dunst &
-#exec redshift &
+exec redshift &
 exec keepassxc &
 exec zim &
 exec termite &
-exec setxkbmap -layout "us,it" -variant "intl," -option "grp:alt_shift_toggle" &
+#exec setxkbmap -layout "us,it" -variant "intl," -option "grp:alt_shift_toggle" &
 exec_always --no-startup-id sh ~/.fehbg
 exec compton --config .config/compton.conf -b 
 exec --no-startup-id /usr/bin/xset b off
@@ -266,7 +273,7 @@ exec --no-startup-id redshift -l 45.4:9.18
 
 ##### Rules ############################################################################################
 ## Rules Assign foo to workspaces  using xprop for determinate program class
-#assign [class="Firefox"] $WS2
+assign [class="Firefox"] $WS2
 #assign [class="rdesktop"] floating disable, $WS10
 #for_window [class="^rdesktop"] move workspace number 5; floating disable
 for_window [class="^rdesktop"] floating disable,move workspace $WS5
