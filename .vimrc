@@ -71,7 +71,21 @@ nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
 set showmode
 set visualbell
 
-"color dracula
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'dracula/vim', { 'name': 'dracula' }
+
+call vundle#end()            " required
+
+color dracula
 
 "if (exists('+colorcolumn'))
 "    set colorcolumn=80

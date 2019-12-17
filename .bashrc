@@ -102,7 +102,7 @@ fi
 export PS1="\[\033[38;5;1m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]\[\033[38;5;6m\]\H\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;11m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \t\n>\[$(tput sgr0)\]"
 ##### git promt to bash shell ####
 GIT_PROMPT_ONLY_IN_REPO=1
-source ~/.bash-git-prompt/gitprompt.sh
+#source ~/.bash-git-prompt/gitprompt.sh
 
 #export PYTHONPATH=$PYTHONPATH:/usr/lib/python3.6
 #export PATH="/usr/local/bin:$PATH"
