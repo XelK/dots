@@ -1,0 +1,13 @@
+2019-12-16 22:00:42:315 [INFO ] runner: Found Terraform binary terraform with version 0.12.18
+2019-12-16 22:00:42:362 [INFO ] runner: Found Terraform binary /usr/bin/terraform with version 0.12.18
+2019-12-16 22:00:42:430 [INFO ] file-system-watcher: Crawling workspace for terraform files...
+2019-12-16 22:00:42:661 [INFO ] file-system-watcher: Indexed file:///home/alex/docs/notes/ter.tf
+2019-12-16 22:00:42:662 [DEBUG] telemetry: Not sending metric initialCrawl
+2019-12-16 22:00:42:662 [DEBUG] telemetry:     totalTimeMs: 231.63768
+2019-12-16 22:00:42:662 [DEBUG] telemetry:     numberOfDocs: 1
+2019-12-16 22:00:42:662 [DEBUG] telemetry:     averagePerDocTimeMs: 231.63768
+2019-12-16 22:00:42:662 [DEBUG] telemetry: Not sending metric activated
+2019-12-16 22:00:42:662 [DEBUG] telemetry:     activateTimeMs: 1479.336477
+2019-12-16 22:01:18:470 [DEBUG] telemetry: Not sending metric provideDocumentSymbols
+2019-12-16 22:01:18:470 [DEBUG] telemetry:     symbolCount: 0
+2019-12-16 22:01:31:049 [INFO ] file-system-watcher: Indexed file:///home/alex/docs/notes/azure/ter.tf

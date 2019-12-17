@@ -1,0 +1,23 @@
+2019-12-16 22:38:07:958 [INFO ] runner: Found Terraform binary terraform with version 0.12.18
+2019-12-16 22:38:08:002 [INFO ] runner: Found Terraform binary /usr/bin/terraform with version 0.12.18
+2019-12-16 22:38:08:091 [INFO ] file-system-watcher: Crawling workspace for terraform files...
+2019-12-16 22:38:08:146 [INFO ] file-system-watcher: Index not generated for: file:///home/alex/docs/notes/azure/example/Implementing-Terraform-on-Microsoft-Azure/9-app-deploy/template-deploy.tf
+2019-12-16 22:38:08:160 [INFO ] file-system-watcher: Index not generated for: file:///home/alex/docs/notes/azure/example/Implementing-Terraform-on-Microsoft-Azure/9-app-deploy/main.tf
+2019-12-16 22:38:08:168 [INFO ] file-system-watcher: Index not generated for: file:///home/alex/docs/notes/azure/example/Implementing-Terraform-on-Microsoft-Azure/2-sec-vnet/main.tf
+2019-12-16 22:38:08:176 [INFO ] file-system-watcher: Index not generated for: file:///home/alex/docs/notes/azure/example/Implementing-Terraform-on-Microsoft-Azure/10-arm-template/template-deploy.tf
+2019-12-16 22:38:08:181 [INFO ] file-system-watcher: Index not generated for: file:///home/alex/docs/notes/azure/example/Implementing-Terraform-on-Microsoft-Azure/10-arm-template/subnet_delegation.tf
+2019-12-16 22:38:08:185 [INFO ] file-system-watcher: Index not generated for: file:///home/alex/docs/notes/azure/example/Implementing-Terraform-on-Microsoft-Azure/7-azure-devops-workspaces/vnet-peering.tf
+2019-12-16 22:38:08:194 [INFO ] file-system-watcher: Indexed file:///home/alex/docs/notes/azure/example/Implementing-Terraform-on-Microsoft-Azure/7-azure-devops-workspaces/backend.tf
+2019-12-16 22:38:08:199 [INFO ] file-system-watcher: Index not generated for: file:///home/alex/docs/notes/azure/example/Implementing-Terraform-on-Microsoft-Azure/7-azure-devops-workspaces/main.tf
+2019-12-16 22:38:08:203 [INFO ] file-system-watcher: Index not generated for: file:///home/alex/docs/notes/azure/example/Implementing-Terraform-on-Microsoft-Azure/3-vnet-peering/vnet-peering.tf
+2019-12-16 22:38:08:208 [INFO ] file-system-watcher: Index not generated for: file:///home/alex/docs/notes/azure/example/Implementing-Terraform-on-Microsoft-Azure/1-main-vnet/main.tf
+2019-12-16 22:38:08:211 [INFO ] file-system-watcher: Indexed file:///home/alex/docs/notes/azure/example/Implementing-Terraform-on-Microsoft-Azure/5-remote-state/backend.tf
+2019-12-16 22:38:08:216 [INFO ] file-system-watcher: Index not generated for: file:///home/alex/docs/notes/azure/example/Implementing-Terraform-on-Microsoft-Azure/4-remote-state-prep/main.tf
+2019-12-16 22:38:08:221 [INFO ] file-system-watcher: Index not generated for: file:///home/alex/docs/notes/azure/example/Implementing-Terraform-on-Microsoft-Azure/8-app-remote-state/main.tf
+2019-12-16 22:38:08:221 [DEBUG] telemetry: Not sending metric initialCrawl
+2019-12-16 22:38:08:221 [DEBUG] telemetry:     totalTimeMs: 129.61082
+2019-12-16 22:38:08:221 [DEBUG] telemetry:     numberOfDocs: 13
+2019-12-16 22:38:08:221 [DEBUG] telemetry:     averagePerDocTimeMs: 9.970063076923076
+2019-12-16 22:38:08:221 [DEBUG] telemetry: Not sending metric activated
+2019-12-16 22:38:08:221 [DEBUG] telemetry:     activateTimeMs: 300.249686
+2019-12-16 22:49:15:702 [INFO ] file-system-watcher: Index not generated for: file:///home/alex/docs/notes/azure/example/Implementing-Terraform-on-Microsoft-Azure/1-main-vnet/main.tf
