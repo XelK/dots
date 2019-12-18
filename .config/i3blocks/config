@@ -51,3 +51,11 @@ signal=10
 [time]
 command=date +"%H:%M"-"%y/%m/%d"
 interval=5
+
+
+#[rofi-calendar]
+#command=./rofi-calendar
+#interval=3600
+#LABEL=
+##DATEFTM=+%a. %d. %b. %Y
+##SHORTFTM=+%d.%m.%Y
