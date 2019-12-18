@@ -1,7 +1,8 @@
 #!/bin/bash
 
 args="-n -e -f -t -i"
-image=$(cat ~/.fehbg |awk '{print $3}'|sed "s/'//g")
+image=$(awk -F "'" '{print $2}' ~/.fehbg)
+#image=$(cat ~/.fehbg |awk '{print $3}'|sed "s/'//g")
 #size=${#a}
 #let "size=$size-2"
 #image=$(echo $a|cut -c 9-$size)
