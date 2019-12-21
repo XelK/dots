@@ -1,0 +1,13 @@
+#/etc/systemd/system/reflector.timer
+[Unit]
+Description=Run reflector daily
+
+[Timer]
+#OnCalendar=Mon *-*-* 7:00:00
+#RandomizedDelaySec=15h
+#Persistent=true
+OnBootSec=15min
+OnUnitActiveSec=1d 
+
+[Install]
+WantedBy=timers.target

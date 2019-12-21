@@ -8,4 +8,4 @@ Target = *
 
 [Action]
 When = PostTransaction
-Exec = /usr/bin/sudo -u alex /bin/sh -c '/usr/bin/pacman -Qqe > $HOME/.config/package_list'
+Exec = /usr/bin/sudo -u alex /bin/sh -c '/usr/bin/pacman -Qqe > $HOME/.config/other/package_list'

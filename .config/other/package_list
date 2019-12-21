@@ -5,6 +5,7 @@ arc-gtk-theme
 arc-icon-theme
 autoconf
 automake
+aws-cli
 base
 bash-completion
 bind-tools
@@ -56,6 +57,7 @@ powertop
 python
 rdesktop
 redshift
+reflector
 rofi
 rsync
 scrot
@@ -65,6 +67,7 @@ terminus-font
 termite
 terraform
 texinfo
+tig
 tmux
 ttf-dejavu
 unrar
