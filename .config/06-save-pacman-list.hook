@@ -1,0 +1,11 @@
+# save pacman list hook in /usr/share/libalpm/hooks/06-save-pacman-list.hook
+
+[Trigger]
+Operation = Install
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+When = PostTransaction
+Exec = /usr/bin/sudo -u alex /bin/sh -c '/usr/bin/pacman -Qqe > $HOME/.config/package_list'
