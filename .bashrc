@@ -71,7 +71,7 @@ if [ -f /usr/share/bash-completion/bash_completion ]; then
 fi
 
 export EDITOR=vim
-export VISUAL=code
+export VISUAL=vim
 export BROWSER=firefox
 
 complete -cf sudo
@@ -104,8 +104,6 @@ export PS1="\[\033[38;5;1m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]
 GIT_PROMPT_ONLY_IN_REPO=1
 #source ~/.bash-git-prompt/gitprompt.sh
 
-#export PYTHONPATH=$PYTHONPATH:/usr/lib/python3.6
 #export PATH="/usr/local/bin:$PATH"
-#export PYTHONPATH="/usr/lib/python2.7/"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

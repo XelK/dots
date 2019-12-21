@@ -17,7 +17,7 @@ color=#A4C2F4
 
 [wifi]
 command=$HOME/.config/i3blocks/wifi
-label=wifi:
+label=
 INTERFACE=wlp0s20f3
 interval=60
 
@@ -36,6 +36,11 @@ interval=30
 #BAT_NUMBER=0
 LABEL=⚡ 
 
+[key_layout]
+command=$HOME/.config/i3blocks/key_layout
+label=Layout
+interval=30
+
 
 [volume]
 command=$HOME/.config/i3blocks/volume
@@ -47,15 +52,16 @@ signal=10
 #MIXER=[determined automatically]
 #SCONTROL=[determined automatically]
 
-# Update time every 5 seconds
-[time]
-command=date +"%H:%M"-"%y/%m/%d"
-interval=5
+## Update time every 5 seconds
+#[time]
+#command=date +"%H:%M"-"%y/%m/%d"
+#interval=5
 
 
-#[rofi-calendar]
-#command=./rofi-calendar
-#interval=3600
-#LABEL=
-##DATEFTM=+%a. %d. %b. %Y
-##SHORTFTM=+%d.%m.%Y
+[rofi-calendar]
+command=./rofi-calendar
+interval=3600
+LABEL=
+DATEFTM=+%H:%M
+#DATEFTM=+%a. %d. %b. %Y
+#SHORTFTM=+%d.%m.%Y

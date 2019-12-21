@@ -35,11 +35,32 @@ fi
 #------------------------------------------------------------------------
 
 QUALITY=$(grep $INTERFACE /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
+SSID=$(iw dev $INTERFACE link|grep SSID:|awk '{print $2}')
+IP=$(curl -Ss ifconfig.me/all|grep ip_addr|awk '{print $2}')
 
 #------------------------------------------------------------------------
 
 echo $QUALITY% # full text
 echo $QUALITY% # short text
+
+
+case "$BLOCK_BUTTON" in
+	1|2|3)
+		export TERM=xterm
+		dunstify $SSID"\n"$IP
+##		printf $SSID"\n"$IP |rofi \
+##			-dmenu \
+#			-markup-rows  \
+#			-no-fullscreen \
+#			-font "Monospace 12" \
+##			-hide-scrollbar \
+#			-bw 2 \
+#			-m -3 \
+#			-theme-str '#window {anchor:southeast; location: northwest;}' \
+#			-eh 1 \
+#			-width -22 \
+#			-lines 2
+esac
 
 # color
 if [[ $QUALITY -ge 80 ]]; then

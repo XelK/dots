@@ -31,7 +31,7 @@ set viminfo+=n~/.vim/viminfo
 
 set colorcolumn=80
 
-"syntax on
+syntax on
 "set spelllang=en,it
 "set spell
 set mouse=a
