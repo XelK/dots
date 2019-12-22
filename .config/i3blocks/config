@@ -17,7 +17,7 @@ color=#A4C2F4
 
 [wifi]
 command=$HOME/.config/i3blocks/wifi
-label=
+label= 
 INTERFACE=wlp0s20f3
 interval=60
 
@@ -44,7 +44,7 @@ interval=30
 
 [volume]
 command=$HOME/.config/i3blocks/volume
-LABEL=♪: 
+LABEL=  
 #LABEL=VOL
 interval=once
 signal=10
@@ -60,8 +60,8 @@ signal=10
 
 [rofi-calendar]
 command=./rofi-calendar
-interval=3600
-LABEL=
+interval=10
+LABEL= 
 DATEFTM=+%H:%M
 #DATEFTM=+%a. %d. %b. %Y
 #SHORTFTM=+%d.%m.%Y

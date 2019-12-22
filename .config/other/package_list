@@ -8,6 +8,7 @@ automake
 aws-cli
 base
 bash-completion
+bc
 bind-tools
 binutils
 bison
@@ -50,6 +51,7 @@ megasync
 netctl
 openfortivpn
 openssh
+otf-font-awesome
 patch
 pcmanfm
 picom
@@ -71,6 +73,7 @@ texinfo
 tig
 tmux
 ttf-dejavu
+ttf-font-awesome
 unrar
 unzip
 vim

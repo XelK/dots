@@ -44,7 +44,7 @@ scrollbar = off
 highlight = #2f2f2f
 
 [hints]
-#font = Monospace 12
+font =Font Awesome 5 Free Regular
 #foreground = #dcdccc
 #background = #3f3f3f
 #active_foreground = #e68080
