@@ -263,6 +263,7 @@ exec redshift &
 exec keepassxc &
 exec zim &
 exec termite &
+exec libinput-gesutres
 #exec setxkbmap -layout "us,it" -variant "intl," -option "grp:alt_shift_toggle" &
 exec_always --no-startup-id sh ~/.fehbg
 exec compton --config .config/compton.conf -b 

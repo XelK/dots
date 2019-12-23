@@ -1,9 +1,13 @@
 # If not running interactively ... get out of here! 
 
+
+#if ! pidof i3; then
+#	startx
+#fi
+
 [ -z "$PS1" ] && return
 
 stty -ixon
-
 
 alias dots='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 
@@ -21,10 +25,9 @@ complete -o bashdefault -o default -F _fzf_path_completion zathura
 ##		;;
 #esac
 	
-#if pidof tmux 1>/dev/null; then
-#    #eval $(keychain --eval --quiet ~/.ssh/pems/neen/id_rsa);
-#    eval $(keychain --eval --quiet ~/.ssh/pems/lab/*);
-#fi;
+if ! pgrep -x tmux; then
+    eval $(keychain --eval --quiet ~/.ssh/keys/*.pem);
+fi;
 
 
 #export TERM=xterm-termite
@@ -64,7 +67,7 @@ ss(){
 }
 
 
-PATH=$PATH:/usr/local/bin:~/src:/snap/bin
+PATH=$PATH:/usr/local/bin:~/src
 # Enable programmable completion features.
 if [ -f /usr/share/bash-completion/bash_completion ]; then
     source /usr/share/bash-completion/bash_completion
@@ -103,7 +106,5 @@ export PS1="\[\033[38;5;1m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]
 ##### git promt to bash shell ####
 GIT_PROMPT_ONLY_IN_REPO=1
 #source ~/.bash-git-prompt/gitprompt.sh
-
-#export PATH="/usr/local/bin:$PATH"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
