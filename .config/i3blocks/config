@@ -23,11 +23,11 @@ interval=60
 
 
 # Query my default IP address only on startup
-[ip]
-#command=hostname -i | awk '{ print "IP:" $1 }'
-command=curl -Ss ifconfig.me/all|grep ip_addr|awk '{print $2}'
-interval=600
-color=#91E78B
+#[ip]
+##command=hostname -i | awk '{ print "IP:" $1 }'
+#command=curl -Ss ifconfig.me/all|grep ip_addr|awk '{print $2}'
+#interval=600
+#color=#91E78B
 
 [battery]
 command=$HOME/.config/i3blocks/battery
