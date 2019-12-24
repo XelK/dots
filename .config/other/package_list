@@ -78,7 +78,7 @@ ttf-font-awesome
 unrar
 unzip
 vim
-vundle
+vim-plug
 wget
 wpa_supplicant
 xarchiver
