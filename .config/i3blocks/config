@@ -9,6 +9,17 @@ SCRIPT_DIR=$HOME/.config/i3blocks
 command=$HOME/.config/i3blocks/spotify_now_playing
 interval=60
 
+
+[volume]
+command=$HOME/.config/i3blocks/volume
+LABEL=  
+#LABEL=VOL
+interval=once
+signal=10
+#STEP=5%
+#MIXER=[determined automatically]
+#SCONTROL=[determined automatically]
+
 # Guess the weather hourly
 [weather]
 command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
@@ -42,15 +53,6 @@ label=Layout
 interval=30
 
 
-[volume]
-command=$HOME/.config/i3blocks/volume
-LABEL=  
-#LABEL=VOL
-interval=once
-signal=10
-#STEP=5%
-#MIXER=[determined automatically]
-#SCONTROL=[determined automatically]
 
 ## Update time every 5 seconds
 #[time]
@@ -60,7 +62,7 @@ signal=10
 
 [rofi-calendar]
 command=./rofi-calendar
-interval=10
+interval=5
 LABEL= 
 DATEFTM=+%H:%M
 #DATEFTM=+%a. %d. %b. %Y

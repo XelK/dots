@@ -84,6 +84,7 @@ wpa_supplicant
 xarchiver
 xclip
 xorg-server
+xorg-xev
 xorg-xinit
 xorg-xinput
 zathura
