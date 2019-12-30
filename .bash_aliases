@@ -1,3 +1,4 @@
+alias dots='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 alias xclip='xclip -selection c'
 #alias diff='colordiff -y'
 alias mv='mv -i'

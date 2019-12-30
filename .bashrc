@@ -1,15 +1,9 @@
 # If not running interactively ... get out of here! 
 
 
-#if ! pidof i3; then
-#	startx
-#fi
-
 [ -z "$PS1" ] && return
 
 stty -ixon
-
-alias dots='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
 
 source /usr/share/fzf/completion.bash
 source /usr/share/fzf/key-bindings.bash
@@ -25,9 +19,9 @@ complete -o bashdefault -o default -F _fzf_path_completion zathura
 ##		;;
 #esac
 	
-#if ! pgrep -x tmux; then
-#    eval $(keychain --eval --quiet ~/.ssh/keys/*.pem);
-#fi;
+if ! pgrep -x tmux; then
+    eval $(keychain --eval --quiet ~/.ssh/keys/*.pem);
+fi;
 
 
 #export TERM=xterm-termite
