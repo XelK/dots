@@ -1,4 +1,7 @@
 alias dots='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
+alias dots.ls='dots ls-tree -r master --name-only'
+alias dots.up='dots commit -am "update" && dots push'
+alias dots.stat='dots status'
 alias xclip='xclip -selection c'
 #alias diff='colordiff -y'
 alias mv='mv -i'
