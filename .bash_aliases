@@ -45,6 +45,6 @@ alias gp="git push"
 
 
 alias a.check_ssl='check_ssl() { curl -vvI "$1" ;}; check_ssl '
-alias a.ssh="keychain --eval --quiet ~/.ssh/*/id_rsa"
+alias a.ssh="keychain --eval --quiet ~/.ssh/keys/*.pem"
 alias a.ns="dig ns"
 alias a.mx="dig mx"
