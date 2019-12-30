@@ -117,7 +117,7 @@ bindsym $mod+Shift+Right move right
 
 #move workspace to top/down monitor
 #move workspace to output left|right|down|up|current|primary|<output>
-bindsym $mod+Shift+M move workspace to output left
+bindsym $mod+Shift+M move workspace to output up
 #bindsym $mod+Shift+D move workspace to output down
 
 # split in horizontal orientation
@@ -247,9 +247,6 @@ mode "$mode_gaps_outer" {
 #### i3 modes ############################################################################################
            
 
-##### Start Up ############################################################################################
-#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 ## finds out, if available)
@@ -258,26 +255,35 @@ bar {
 }
 
 
+##### Start Up ############################################################################################
 exec dunst &
 exec redshift &
+exec picom &
 exec keepassxc &
 exec zim &
-exec termite &
-#exec setxkbmap -layout "us,it" -variant "intl," -option "grp:alt_shift_toggle" &
+exec termite -e tmux &
+exec libinput-gestures
 exec_always --no-startup-id sh ~/.fehbg
-exec compton --config .config/compton.conf -b 
 exec --no-startup-id /usr/bin/xset b off
-exec --no-startup-id libinput-gesutres-setup start
-exec --no-startup-id redshift -l 45.4:9.18
+exec --no-startup-id firefox -P web --class firefox-web
+exec --no-startup-id firefox -P mess --class firefox-mess
+exec --no-startup-id pcmanfm
+exec --no-startup-id spotify
+exec --no-startup-id code
 ##### Start Up ############################################################################################
 
 
 ##### Rules ############################################################################################
 ## Rules Assign foo to workspaces  using xprop for determinate program class
-assign [class="Firefox"] $WS2
-#assign [class="rdesktop"] floating disable, $WS10
+assign [class="firefox-web"] $WS2
+assign [class="firefox-mess"] $WS9
+assign [class="code-oss"] $WS3
+assign [class="Zim"] $WS5
+assign [class="Pcmanfm"] $WS4
+for_window [class = "Spotify"] move to workspace $WS10
+for_window [class="KeePassXC"] floating enable
 #for_window [class="^rdesktop"] move workspace number 5; floating disable
-for_window [class="^rdesktop"] floating disable,move workspace $WS5
+#for_window [class="^rdesktop"] floating disable,move workspace $WS5
 ##### Rules ############################################################################################
 
 

@@ -1,6 +1,8 @@
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
+set nocompatible
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
@@ -8,6 +10,29 @@ Plug 'scrooloose/nerdtree'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf'
 Plug 'dracula/vim'
+
+
+
+Plug 'python-rope/ropevim'
+Plug 'davidhalter/jedi-vim'
+Plug 'SirVer/ultisnips', { 'commit': 'a909dee82b6eaaa3ae001e27c3e95c58d487d242'}
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-fugitive'
+Plug 'w0rp/ale'
+Plug 'sheerun/vim-polyglot'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'airblade/vim-gitgutter'
+Plug 'majutsushi/tagbar'
+
+
+" Python
+"Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+" Python
+
+"markdown
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
 Plug 'airblade/vim-gitgutter' "show git difference
 Plug 'jiangmiao/auto-pairs'   "add close brackets
 Plug 'tpope/vim-surround'   "surround word/lines with simbols
@@ -19,6 +44,9 @@ Plug 'tpope/vim-surround'   "surround word/lines with simbols
 call plug#end()
 
 color dracula
+
+"let g:pymode = 1
+
 
 let g:airline_powerline_fonts = 1 "fonts for powerline
 
@@ -33,7 +61,6 @@ let NERDTreeShowHidden=1  "  Always show dot files
 let NERDTreeQuitOnOpen=1
 map  <Leader>n  :NERDTreeFind<CR>
 
-set nocompatible
 
 "disable arrow keys:
 noremap <Up> <NOP>
@@ -87,8 +114,3 @@ nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
 
 set showmode
 set visualbell
-
-
-
- 
- 

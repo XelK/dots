@@ -13,9 +13,11 @@ bind-tools
 binutils
 bison
 code
+ctags
 dhcpcd
 dialog
 dmenu
+docker
 dunst
 etckeeper
 fakeroot
@@ -59,6 +61,9 @@ picom
 pkgconf
 powertop
 python
+python-ipdb
+python-pip
+python-pylint
 rdesktop
 redshift
 reflector
