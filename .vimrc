@@ -12,6 +12,8 @@ Plug 'junegunn/fzf'
 Plug 'dracula/vim'
 
 
+Plug 'tibabit/vim-templates'
+
 
 Plug 'python-rope/ropevim'
 Plug 'davidhalter/jedi-vim'

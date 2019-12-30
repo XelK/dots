@@ -1,0 +1,10 @@
+---
+title: "{{FILEE}}"
+date: {{TIMESTAMP}}
+author: "{{NAME}} ({{EMAIL}})"
+bibliography: "bibliography.bib"
+csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/harvard-anglia-ruskin-university.csl"
+urlcolor: "blue"
+---
+
+{{CURSOR}}

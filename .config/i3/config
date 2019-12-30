@@ -258,12 +258,12 @@ bar {
 ##### Start Up ############################################################################################
 exec dunst &
 exec redshift &
-exec picom &
 exec keepassxc &
 exec zim &
 exec termite -e tmux &
 exec libinput-gestures
 exec_always --no-startup-id sh ~/.fehbg
+exec_always --no-startup-id picom -b 
 exec --no-startup-id /usr/bin/xset b off
 exec --no-startup-id firefox -P web --class firefox-web
 exec --no-startup-id firefox -P mess --class firefox-mess
