@@ -42,7 +42,8 @@ alias a.monitor2="xrandr --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate nor
 
 
 ####GIT ALIAS ###
-alias ga="git add"
+alias ga="git add -ma"
+alias gs="git status"
 alias gc="git commit"
 alias gp="git push"
 ####GIT ALIAS ###

@@ -10,26 +10,26 @@ Plug 'scrooloose/nerdtree'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf'
 Plug 'dracula/vim'
-
-
 Plug 'tibabit/vim-templates'
 
 
-Plug 'python-rope/ropevim'
-Plug 'davidhalter/jedi-vim'
-Plug 'SirVer/ultisnips', { 'commit': 'a909dee82b6eaaa3ae001e27c3e95c58d487d242'}
-Plug 'honza/vim-snippets'
-Plug 'tpope/vim-fugitive'
-Plug 'w0rp/ale'
-Plug 'sheerun/vim-polyglot'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'airblade/vim-gitgutter'
-Plug 'majutsushi/tagbar'
+"Plug 'python-rope/ropevim'
+"Plug 'davidhalter/jedi-vim'
+"Plug 'SirVer/ultisnips', { 'commit': 'a909dee82b6eaaa3ae001e27c3e95c58d487d242'}
+"Plug 'honza/vim-snippets'
+"Plug 'tpope/vim-fugitive'
+"Plug 'w0rp/ale'
+"Plug 'sheerun/vim-polyglot'
+"Plug 'ludovicchabant/vim-gutentags'
+"Plug 'airblade/vim-gitgutter'
+"Plug 'majutsushi/tagbar'
 
 
 " Python
 "Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 " Python
+
+
 
 
 Plug 'tmhedberg/SimpylFold'
@@ -46,8 +46,23 @@ Plug 'tpope/vim-surround'   "surround word/lines with simbols
 "* yss" - surround with ""
 "* cs'" - change surround from ' to "
 
+
+Plug 'vim-scripts/indentpython.vim'
+Plug 'Valloric/YouCompleteMe'
+
 call plug#end()
 
+set encoding=utf-8
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+"au BufNewFile,BufRead *.py
+"    \ set tabstop=4
+"    \ set softtabstop=4
+"    \ set shiftwidth=4
+"    \ set textwidth=79
+"    \ set expandtab
+"    \ set autoindent
+"    \ set fileformat=unix
+"
 color dracula
 
 "let g:pymode = 1

@@ -20,6 +20,7 @@ dmenu
 docker
 dunst
 etckeeper
+ethtool
 fakeroot
 feh
 firefox
@@ -63,6 +64,7 @@ powertop
 python
 python-ipdb
 python-pip
+python-pudb
 python-pylint
 rdesktop
 redshift
@@ -70,6 +72,7 @@ reflector
 rofi
 rsync
 scrot
+smartmontools
 spotify
 sudo
 terminus-font
@@ -77,6 +80,7 @@ termite
 terraform
 texinfo
 tig
+tlp
 tmux
 ttf-dejavu
 ttf-font-awesome

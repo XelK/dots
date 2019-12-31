@@ -1,2 +1,2 @@
 #/bin/bash
-scrot -s '%Y-%m-%d--%s_$wx$h_scrot.jpg' -e 'mv $f ~/Screenshot &amp; feh ~/Screenshot/$f'
+scrot -s 'screen_%Y%m%d_%H%M.jpg' -e 'mv $f ~/img &amp; feh ~/img/$f'
