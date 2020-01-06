@@ -276,14 +276,14 @@ exec --no-startup-id code
 ##### Rules ############################################################################################
 ## Rules Assign foo to workspaces  using xprop for determinate program class
 assign [class="firefox-web"] $WS2
-assign [class="firefox-mess"] $WS9
 assign [class="code-oss"] $WS3
-assign [class="Zim"] $WS5
 assign [class="Pcmanfm"] $WS4
+assign [class="Zim"] $WS5
+for_window [class="xfreerdp"] move workspace $WS6, floating disable
+assign [class="firefox-mess"] $WS9
 for_window [class = "Spotify"] move to workspace $WS10
+
 for_window [class="KeePassXC"] floating enable
-#for_window [class="^rdesktop"] move workspace number 5; floating disable
-#for_window [class="^rdesktop"] floating disable,move workspace $WS5
 ##### Rules ############################################################################################
 
 

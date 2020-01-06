@@ -25,6 +25,7 @@ fakeroot
 feh
 firefox
 flex
+freerdp
 fzf
 gcc
 git
@@ -46,6 +47,7 @@ libnotify
 light
 linux-firmware
 linux-lts
+linux-zen
 lvm2
 lxappearance
 m4
