@@ -19,9 +19,9 @@ complete -o bashdefault -o default -F _fzf_path_completion zathura
 ##		;;
 #esac
 	
-#if ! pgrep -x tmux; then
-#    eval $(keychain --eval --quiet ~/.ssh/keys/*.pem);
-#fi;
+if ! pgrep -x tmux; then
+    eval $(keychain --eval --quiet ~/.ssh/keys/*.pem);
+fi;
 
 
 #export TERM=xterm-termite
