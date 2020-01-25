@@ -11,20 +11,12 @@ export FZF_DEFAULT_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null ||
 cat {} || tree -C {}) 2> /dev/null | head -200'"
 complete -o bashdefault -o default -F _fzf_path_completion zathura
 
-
-#case "$(pidof i3|wc -w)" in
-#	0)startx 
-#		;;
-##	1) echo "i3 running" 
-##		;;
-#esac
 	
-if ! pgrep -x tmux; then
-    eval $(keychain --eval --quiet ~/.ssh/keys/*.pem);
-fi;
+#if ! pgrep -x tmux; then
+#    eval $(keychain --eval --quiet ~/.ssh/keys/*.pem);
+#fi;
 
 
-#export TERM=xterm-termite
 export TERM=xterm-256color
 #export PAGER=vimpager
 
@@ -44,10 +36,10 @@ man() {
 
 ##termite ctl+t
 ##if [[ $TERM == xterm-termite ]]; then
-#if [[ $TERM == xterm-256color ]]; then
-#  . /etc/profile.d/vte.sh
-#  __vte_prompt_command
-#fi
+if [[ $TERM == xterm-256color ]]; then
+  . /etc/profile.d/vte.sh
+  __vte_prompt_command
+fi
 
 ##### ssh tmux windows name ######
 settitle() {
