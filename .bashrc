@@ -12,9 +12,9 @@ cat {} || tree -C {}) 2> /dev/null | head -200'"
 complete -o bashdefault -o default -F _fzf_path_completion zathura
 
 	
-#if ! pgrep -x tmux; then
-#    eval $(keychain --eval --quiet ~/.ssh/keys/*.pem);
-#fi;
+if ! pgrep -x tmux; then
+    eval $(keychain --eval --quiet ~/.ssh/keys/*.pem);
+fi;
 
 
 export TERM=xterm-256color
@@ -36,10 +36,11 @@ man() {
 
 ##termite ctl+t
 ##if [[ $TERM == xterm-termite ]]; then
-if [[ $TERM == xterm-256color ]]; then
-  . /etc/profile.d/vte.sh
-  __vte_prompt_command
-fi
+
+#if [[ $TERM == xterm-256color ]]; then
+#  . /etc/profile.d/vte.sh
+#  __vte_prompt_command
+#fi
 
 ##### ssh tmux windows name ######
 settitle() {

@@ -40,6 +40,7 @@ i3blocks
 i3lock
 i3status
 ifplugd
+imagemagick
 iproute2
 ipython
 iw
@@ -91,6 +92,7 @@ tig
 tlp
 tmux
 ttf-dejavu
+ttf-fira-code
 ttf-font-awesome
 unrar
 unzip
