@@ -1,7 +1,8 @@
 #### i3 config ############################################################################################
 set $mod Mod4
 #set $mod Mod1
-font pango:Source Code Pro Bold 10
+#font pango:Source Code Pro Bold 10
+font pango:Fira Code Retina 10
 # boarder style for new window
 new_window pixel 5
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -275,6 +276,7 @@ exec --no-startup-id code
 
 ##### Rules ############################################################################################
 ## Rules Assign foo to workspaces  using xprop for determinate program class
+assign [class="Termite"] $WS1
 assign [class="firefox-web"] $WS2
 assign [class="code-oss"] $WS3
 assign [class="Pcmanfm"] $WS4
