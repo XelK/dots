@@ -1,69 +1,56 @@
-SCRIPT_DIR=$HOME/.config/i3blocks
+#SCRIPT_DIR=$HOME/.config/i3blocks
 
-#[click]
-#full_text=Click me!
-#command=echo "Got clicked with button $button"
-#color=#F79494
+command=$HOME/.config/i3blocks/$BLOCK_NAME
+separator_block_width=15
+markup=nonelan
+
+#[window title]
+#command=xdotool getactivewindow getwindowname
+#interval=3
+##color=#A6D1FA
+#min_width=1920
+#align=center
 
 [spotify]
-command=$HOME/.config/i3blocks/spotify_now_playing
-interval=60
-
-
-[volume]
-command=$HOME/.config/i3blocks/volume
-LABEL=  
-#LABEL=VOL
-interval=once
-signal=10
-#STEP=5%
-#MIXER=[determined automatically]
-#SCONTROL=[determined automatically]
+max_width=20
+interval=5
+label= 
 
 # Guess the weather hourly
 [weather]
 command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
 interval=3600
-color=#A4C2F4
+label= 
+#color=#A4C2F4
+
+[memory]
+command= free -m|grep Mem|awk '{print $3"Mb/"$2"Mb"}'
+interval=60
+label= 
 
 [wifi]
-command=$HOME/.config/i3blocks/wifi
 label= 
 INTERFACE=wlp0s20f3
 interval=60
 
-
-# Query my default IP address only on startup
-#[ip]
-##command=hostname -i | awk '{ print "IP:" $1 }'
-#command=curl -Ss ifconfig.me/all|grep ip_addr|awk '{print $2}'
-#interval=600
-#color=#91E78B
-
 [battery]
-command=$HOME/.config/i3blocks/battery
-interval=30
+interval=60
+markup=pango
 #LABEL=BAT
 #BAT_NUMBER=0
 LABEL=⚡ 
 
 [key_layout]
-command=$HOME/.config/i3blocks/key_layout
-label=Layout
-interval=30
+command=case "$(xset -q|grep LED| awk '{ print $10 }')" in   "00001000") echo "En" ;;   "00000000") echo "It" ;;   *) KBD="unknown" ;; esac
+interval=3
+label= 
 
-
-
-## Update time every 5 seconds
-#[time]
-#command=date +"%H:%M"-"%y/%m/%d"
-#interval=5
-
+[volume]
+LABEL=  
+interval=once
+signal=10
 
 [rofi-calendar]
-command=./rofi-calendar
 interval=5
 LABEL= 
 DATEFTM=+%H:%M
-#DATEFTM=+%a. %d. %b. %Y
-#SHORTFTM=+%d.%m.%Y

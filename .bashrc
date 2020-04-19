@@ -1,6 +1,5 @@
 # If not running interactively ... get out of here! 
 
-
 [ -z "$PS1" ] && return
 
 stty -ixon
@@ -10,6 +9,12 @@ source /usr/share/fzf/key-bindings.bash
 export FZF_DEFAULT_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null ||
 cat {} || tree -C {}) 2> /dev/null | head -200'"
 complete -o bashdefault -o default -F _fzf_path_completion zathura
+
+# virtualenv
+export WORKON_HOME=$HOME/.local/virtualenvs
+export MSYS_HOME=/c/msys/1.0
+source /usr/bin/virtualenvwrapper_lazy.sh
+
 
 	
 if ! pgrep -x tmux; then
@@ -54,7 +59,10 @@ ss(){
 }
 
 
-PATH=$PATH:/usr/local/bin:~/src
+PATH=$PATH:/usr/local/bin:~/docs/src
+XDG_CONFIG_HOME=$HOME/.config
+XDG_CACHE_HOME=$HOME/.cache
+XDG_DATA_HOME=$HOME/.local/share
 # Enable programmable completion features.
 if [ -f /usr/share/bash-completion/bash_completion ]; then
     source /usr/share/bash-completion/bash_completion

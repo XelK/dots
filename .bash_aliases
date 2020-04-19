@@ -6,6 +6,7 @@ alias dots.stat='dots status'
 #### dots manager ####
 alias xclip='xclip -selection c'
 alias mv='mv -i'
+alias a.venv='source $HOME/docs/venv/bin/activate'
 alias a.curl='curl -kIL'
 alias cp='cp -i'
 alias lr='ls -alFrt --color=auto'

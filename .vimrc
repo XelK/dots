@@ -3,13 +3,23 @@
 " - Avoid using standard Vim directory names like 'plugin'
 set nocompatible
 
-call plug#begin('~/.vim/plugged')
+""$XDG_CONFIG_HOME"/vim/vimrc
+"
+"set undodir=$XDG_DATA_HOME/vim/undo
+"set directory=$XDG_DATA_HOME/vim/swap
+"set backupdir=$XDG_DATA_HOME/vim/backup
+"set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo
+"set runtimepath=$XDG_CONFIG_HOME/vim,$VIMRUNTIME,$XDG_CONFIG_HOME/vim/after
+
+
+call plug#begin('$HOME/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf'
-Plug 'dracula/vim'
+"Plug 'dracula/vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'tibabit/vim-templates'
 
 
@@ -32,15 +42,15 @@ Plug 'tibabit/vim-templates'
 
 
 
-Plug 'tmhedberg/SimpylFold'
+"Plug 'tmhedberg/SimpylFold'
 
 "markdown
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-
-Plug 'airblade/vim-gitgutter' "show git difference
-Plug 'jiangmiao/auto-pairs'   "add close brackets
-Plug 'tpope/vim-surround'   "surround word/lines with simbols
+"""Plug 'godlygeek/tabular'
+"Plug 'plasticboy/vim-markdown'
+"
+"Plug 'airblade/vim-gitgutter' "show git difference
+"Plug 'jiangmiao/auto-pairs'   "add close brackets
+"Plug 'tpope/vim-surround'   "surround word/lines with simbols
 "shourtcats:
 "* ySS" - surround with "" and newline"
 "* yss" - surround with ""
@@ -62,8 +72,9 @@ set encoding=utf-8
 "    \ set expandtab
 "    \ set autoindent
 "    \ set fileformat=unix
-"
+
 color dracula
+colorscheme dracula
 
 "let g:pymode = 1
 
@@ -89,7 +100,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Enable folding with the spacebar
-nnoremap <space> za
+"nnoremap <space> za
 " Enable folding
 
 "disable arrow keys:
@@ -130,7 +141,7 @@ set showmatch           " highlight matching [{()}]
 set incsearch           " search as characters are entered
 set ignorecase           " search ignore the case
 set hlsearch            " highlight matches
-"set autoindent
+set autoindent
 set smartindent
 filetype plugin on
 "set background=dark

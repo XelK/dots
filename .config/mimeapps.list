@@ -1,5 +1,7 @@
 [Added Associations]
 image/jpeg=firefox.desktop;feh.desktop;
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
 
 [Default Applications]
 image/jpeg=feh.desktop
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop

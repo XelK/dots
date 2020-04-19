@@ -1,2 +1,3 @@
 #!/bin/sh
 feh --no-fehbg --bg-center '/home/alex/img/wall.png'
+#feh --no-fehbg --bg-center '$HOME/.config/i3/wall.png'

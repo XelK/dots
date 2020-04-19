@@ -258,19 +258,21 @@ bar {
 
 ##### Start Up ############################################################################################
 exec dunst &
-exec redshift &
+exec redshift-gtk &
+exec blueman-applet &
 exec keepassxc &
+exec parcellite &
 exec zim &
 exec termite -e tmux &
 exec libinput-gestures
 exec_always --no-startup-id sh ~/.fehbg
 exec_always --no-startup-id picom -b 
 exec --no-startup-id /usr/bin/xset b off
-exec --no-startup-id firefox -P web --class firefox-web
-exec --no-startup-id firefox -P mess --class firefox-mess
-exec --no-startup-id pcmanfm
-exec --no-startup-id spotify
-exec --no-startup-id code
+#exec --no-startup-id firefox -P web --class firefox-web
+#exec --no-startup-id firefox -P mess --class firefox-mess
+#exec --no-startup-id pcmanfm
+#exec --no-startup-id spotify
+#exec --no-startup-id code
 ##### Start Up ############################################################################################
 
 
@@ -282,8 +284,8 @@ assign [class="code-oss"] $WS3
 assign [class="Pcmanfm"] $WS4
 assign [class="Zim"] $WS5
 for_window [class="xfreerdp"] move workspace $WS6, floating disable
-assign [class="firefox-mess"] $WS9
-for_window [class = "Spotify"] move to workspace $WS10
+assign [class="firefox-mess"] $WS10
+for_window [class = "Spotify"] move to workspace $WS9
 
 for_window [class="KeePassXC"] floating enable
 ##### Rules ############################################################################################
@@ -295,4 +297,31 @@ client.focused_inactive #333333 #333333 #888888 #292d2e
 client.unfocused #333333 #333333 #888888 #292d2e
 client.urgent #2f343a #900000 #ffffff #900000
 ##### colors ############################################################################################
+
+
+### darcula ###
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+client.background       #F8F8F2
+
+#bar {
+#  colors {
+#    background #282A36
+#    statusline #F8F8F2
+#    separator  #44475A
+#
+#    focused_workspace  #44475A #44475A #F8F8F2
+#    active_workspace   #282A36 #44475A #F8F8F2
+#    inactive_workspace #282A36 #282A36 #BFBFBF
+#    urgent_workspace   #FF5555 #FF5555 #F8F8F2
+#    binding_mode       #FF5555 #FF5555 #F8F8F2
+#  }
+#}
+#
+#bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
 
