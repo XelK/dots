@@ -1,8 +1,6 @@
 #### i3 config ############################################################################################
 set $mod Mod4
-#set $mod Mod1
-#font pango:Source Code Pro Bold 10
-font pango:Fira Code Retina 10
+font pango:Fira Code Retina 12
 # boarder style for new window
 new_window pixel 5
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -13,8 +11,8 @@ floating_minimum_size 10 x 10
 
 # gaps
 for_window [class="^.*"] border pixel $BORDER_SIZE
-gaps inner 10
-gaps outer 5
+#gaps inner 10
+gaps outer 20
 
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -32,19 +30,17 @@ workspace_auto_back_and_forth yes
 force_display_urgency_hint 500 ms
 
 # ASSIGN WORKSPACE VARIABLES
-set $WS1 01
-set $WS2 02
-set $WS3 03
-set $WS4 04
-set $WS5 05
-set $WS6 06
-set $WS7 07
-set $WS8 08
-set $WS9 09
+set $WS1 1
+set $WS2 2
+set $WS3 3
+set $WS4 4
+set $WS5 5
+set $WS6 6
+set $WS7 7
+set $WS8 8
+set $WS9 9
 set $WS10 10
 #### i3 config ############################################################################################
-
-
 
 #### Bind Keys ############################################################################################
 bindsym --release $mod+m exec "sh ~/.config/i3/screenshot.sh"
@@ -69,6 +65,7 @@ bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+a exec --no-startup-id rofi -show window
 
 bindsym $mod+Return exec termite 
+#bindsym $mod+Return exec alacritty 
 
 bindsym $mod+Shift+g mode "$mode_gaps"
 
@@ -99,8 +96,8 @@ bindsym Mod1+Tab focus left
 bindsym Mod1+Shift+Tab focus down
 #bindsym $mod+Tab workspace back_and_forth
 
-bindsym $mod+bracketright workspace next
-bindsym $mod+bracketleft workspace prev
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+Shift+bracketright   move container to workspace next
 bindsym $mod+Shift+bracketleft  move container to workspace prev
 
@@ -131,7 +128,7 @@ bindsym $mod+v split h
 bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+bindsym $mod+q layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+y layout toggle all
@@ -148,6 +145,11 @@ bindsym $mod+p focus parent
 bindsym $mod+b border toggle
 # focus the child container
 bindsym $mod+c focus child
+
+# sticky window
+bindsym $mod+s exec i3-msg "[id=$(xdotool getactivewindow)] sticky enable" 
+bindsym $mod+Shift+s exec i3-msg "[id=$(xdotool getactivewindow)] sticky disable" 
+
 
 # switch to workspace
 bindsym $mod+1 workspace $WS1
@@ -247,13 +249,45 @@ mode "$mode_gaps_outer" {
 }
 #### i3 modes ############################################################################################
            
+# set primary gruvbox colorscheme colors
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $grey #a89984
+set $darkgray #1d2021
+set $black #000000
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 ## finds out, if available)
 bar {
-         status_command i3blocks
+        status_command i3blocks
+		tray_padding 5
+		colors {
+        # bar background color
+        background $bg
+        # text color used for blocks that do not have a color specified.
+        statusline $grey
+        # workspaces section
+        #                    border		backgr. 	text
+        focused_workspace    $grey 		$black 		$yellow
+        inactive_workspace   $bg 		$bg 		$grey
+        active_workspace     $black 	$darkgray 	$yellow
+        urgent_workspace     $red 		$darkgray 	$grey
+    }
 }
+
+# https://github.com/a-schaefers/i3-wm-gruvbox-theme/blob/master/i3/config
+# class                 border		|backgr		|text		|indicator		|child_border
+client.focused          $black 		$black 		$yellow 	$purple 		$yellow
+client.focused_inactive $darkgray 	$darkgray 	$yellow 	$purple 		$darkgray
+client.unfocused        $darkgray 	$bg 		$grey 		$purple 		$darkgray
+client.urgent           $red 		$red 		$black 		$red 			$red
+
 
 
 ##### Start Up ############################################################################################
@@ -261,6 +295,7 @@ exec dunst &
 exec redshift-gtk &
 exec blueman-applet &
 exec keepassxc &
+exec --no-startup-id greenclip daemon>/dev/null
 exec parcellite &
 exec zim &
 exec termite -e tmux &
@@ -284,44 +319,10 @@ assign [class="code-oss"] $WS3
 assign [class="Pcmanfm"] $WS4
 assign [class="Zim"] $WS5
 for_window [class="xfreerdp"] move workspace $WS6, floating disable
-assign [class="firefox-mess"] $WS10
+for_window [class="firefox-mess"] move to workspace $WS10
 for_window [class = "Spotify"] move to workspace $WS9
 
 for_window [class="KeePassXC"] floating enable
 ##### Rules ############################################################################################
 
-
-##### colors ############################################################################################
-client.focused #0088CC #0088CC #ffffff #dddddd
-client.focused_inactive #333333 #333333 #888888 #292d2e
-client.unfocused #333333 #333333 #888888 #292d2e
-client.urgent #2f343a #900000 #ffffff #900000
-##### colors ############################################################################################
-
-
-### darcula ###
-# class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
-
-client.background       #F8F8F2
-
-#bar {
-#  colors {
-#    background #282A36
-#    statusline #F8F8F2
-#    separator  #44475A
-#
-#    focused_workspace  #44475A #44475A #F8F8F2
-#    active_workspace   #282A36 #44475A #F8F8F2
-#    inactive_workspace #282A36 #282A36 #BFBFBF
-#    urgent_workspace   #FF5555 #FF5555 #F8F8F2
-#    binding_mode       #FF5555 #FF5555 #F8F8F2
-#  }
-#}
-#
-#bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
 

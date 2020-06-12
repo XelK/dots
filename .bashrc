@@ -17,11 +17,12 @@ source /usr/bin/virtualenvwrapper_lazy.sh
 
 
 	
-if ! pgrep -x tmux; then
-    eval $(keychain --eval --quiet ~/.ssh/keys/*.pem);
-fi;
+#if ! pgrep -x tmux; then
+#    eval $(keychain --eval --quiet ~/.ssh/keys/*.pem);
+#fi;
 
 
+#export TERMINAL=alacritty
 export TERM=xterm-256color
 #export PAGER=vimpager
 
@@ -70,7 +71,7 @@ fi
 
 export EDITOR=vim
 export VISUAL=vim
-export BROWSER=firefox
+#export BROWSER=firefox
 
 complete -cf sudo
 

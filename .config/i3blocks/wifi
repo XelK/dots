@@ -52,7 +52,7 @@ esac
 
 # color
 if [[ $QUALITY -ge 80 ]]; then
-    echo "#00FF00"
+    echo "#a89984"
 elif [[ $QUALITY -ge 60 ]]; then
     echo "#FFF600"
 elif [[ $QUALITY -ge 40 ]]; then

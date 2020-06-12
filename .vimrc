@@ -19,7 +19,7 @@ Plug 'scrooloose/nerdtree'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf'
 "Plug 'dracula/vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
+"Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'tibabit/vim-templates'
 
 
@@ -45,12 +45,12 @@ Plug 'tibabit/vim-templates'
 "Plug 'tmhedberg/SimpylFold'
 
 "markdown
-"""Plug 'godlygeek/tabular'
-"Plug 'plasticboy/vim-markdown'
+"Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 "
-"Plug 'airblade/vim-gitgutter' "show git difference
-"Plug 'jiangmiao/auto-pairs'   "add close brackets
-"Plug 'tpope/vim-surround'   "surround word/lines with simbols
+Plug 'airblade/vim-gitgutter' "show git difference
+Plug 'jiangmiao/auto-pairs'   "add close brackets
+Plug 'tpope/vim-surround'   "surround word/lines with simbols
 "shourtcats:
 "* ySS" - surround with "" and newline"
 "* yss" - surround with ""
@@ -59,6 +59,8 @@ Plug 'tibabit/vim-templates'
 
 Plug 'vim-scripts/indentpython.vim'
 Plug 'Valloric/YouCompleteMe'
+
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -73,11 +75,16 @@ set encoding=utf-8
 "    \ set autoindent
 "    \ set fileformat=unix
 
-color dracula
-colorscheme dracula
+"color dracula
+"colorscheme dracula
 
+set background=dark
+let g:gruvbox_contrast_dark = "hard"
+"let g:gruvbox_improved_strings = "1"
+"let g:gruvbox_invert_tabline = "1"
+colorscheme gruvbox
+"set list
 "let g:pymode = 1
-
 
 let g:airline_powerline_fonts = 1 "fonts for powerline
 

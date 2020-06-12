@@ -1,7 +1,18 @@
 [Added Associations]
 image/jpeg=firefox.desktop;feh.desktop;
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+image/png=feh.desktop;
+video/mp4=firefox.desktop;
+video/x-matroska=mpv.desktop;
 
 [Default Applications]
 image/jpeg=feh.desktop
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
+image/png=feh.desktop
+text/html=firefox.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/about=firefox.desktop
+x-scheme-handler/unknown=firefox.desktop
+video/x-matroska=mpv.desktop
+x-scheme-handler/msteams=teams.desktop

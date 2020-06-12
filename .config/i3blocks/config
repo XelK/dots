@@ -2,7 +2,8 @@
 
 command=$HOME/.config/i3blocks/$BLOCK_NAME
 separator_block_width=15
-markup=nonelan
+#markup=nonelan
+markup=pango
 
 #[window title]
 #command=xdotool getactivewindow getwindowname
@@ -24,9 +25,10 @@ label=
 #color=#A4C2F4
 
 [memory]
-command= free -m|grep Mem|awk '{print $3"Mb/"$2"Mb"}'
-interval=60
-label= 
+#command= free -h|grep Mem|awk '{print $3"/"$2}'
+interval=10
+#label= 
+#label= 
 
 [wifi]
 label= 
@@ -35,7 +37,6 @@ interval=60
 
 [battery]
 interval=60
-markup=pango
 #LABEL=BAT
 #BAT_NUMBER=0
 LABEL=⚡ 
@@ -47,8 +48,8 @@ label=
 
 [volume]
 LABEL=  
-interval=once
-signal=10
+interval=3
+#signal=10
 
 [rofi-calendar]
 interval=5
