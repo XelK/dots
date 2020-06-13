@@ -16,3 +16,4 @@ x-scheme-handler/about=firefox.desktop
 x-scheme-handler/unknown=firefox.desktop
 video/x-matroska=mpv.desktop
 x-scheme-handler/msteams=teams.desktop
+x-scheme-handler/etcher=balena-etcher-electron.desktop

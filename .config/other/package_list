@@ -85,6 +85,7 @@ lxappearance
 m4
 make
 man-db
+mingetty
 minikube
 mpv
 mtools
@@ -152,6 +153,7 @@ vim-plug
 w3m
 wget
 whois
+woeusb
 wpa_supplicant
 xarchiver
 xclip
