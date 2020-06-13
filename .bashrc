@@ -2,13 +2,13 @@
 
 [ -z "$PS1" ] && return
 
-# start ssh-agent once
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
-fi
-if [[ ! "$SSH_AUTH_SOCK" ]]; then
-    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
-fi
+## start ssh-agent once
+#if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+#    ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
+#fi
+#if [[ ! "$SSH_AUTH_SOCK" ]]; then
+#    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+#fi
 
 
 stty -ixon
@@ -26,14 +26,12 @@ source /usr/bin/virtualenvwrapper_lazy.sh
 
 
 	
-#if ! pgrep -x tmux; then
-#    eval $(keychain --eval --quiet ~/.ssh/keys/*.pem);
-#fi;
+eval $(keychain --eval --quiet ~/.ssh/keys/*.pem);
 
 
 #export TERMINAL=alacritty
 export TERM=xterm-256color
-#export PAGER=vimpager
+export PAGER=vimpager
 
 ### colored man
 man() {
