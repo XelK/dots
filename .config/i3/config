@@ -43,7 +43,7 @@ set $WS10 10
 #### i3 config ############################################################################################
 
 #### Bind Keys ############################################################################################
-bindsym --release $mod+m exec "sh ~/.config/i3/screenshot.sh"
+bindsym --release $mod+m exec "maim -s -u | xclip -selection clipboard -t image/png -i"
 # kill focused window
 bindsym $mod+Shift+q kill 
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ unmute
@@ -149,7 +149,6 @@ bindsym $mod+c focus child
 # sticky window
 bindsym $mod+s exec i3-msg "[id=$(xdotool getactivewindow)] sticky enable" 
 bindsym $mod+Shift+s exec i3-msg "[id=$(xdotool getactivewindow)] sticky disable" 
-
 
 # switch to workspace
 bindsym $mod+1 workspace $WS1

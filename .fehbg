@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-center '/home/alex/img/sadkitty1.png'
+feh --no-fehbg --bg-scale '/home/alex/img/3000-2000-max.png'

@@ -26,7 +26,7 @@ source /usr/bin/virtualenvwrapper_lazy.sh
 
 
 	
-eval $(keychain --eval --quiet ~/.ssh/keys/*.pem);
+eval $(keychain --noask --eval --quiet ~/.ssh/keys/*.pem);
 
 
 #export TERMINAL=alacritty

@@ -122,7 +122,7 @@ set guitablabel=%N\ %f
 set swapfile
 set dir=~/.vim/tmp
 
-set colorcolumn=80
+"set colorcolumn=80
 
 syntax on
 "set spelllang=en,it

@@ -4,7 +4,6 @@ alias dots.ls='dots ls-tree -r master --name-only'
 alias dots.up='dots commit -am "update" && dots push'
 alias dots.stat='dots status'
 #### dots manager ####
-alias ssh_key='eval $(keychain --eval --quiet ~/.ssh/keys/id_ed25519.pem)'
 alias xclip='xclip -selection c'
 alias mv='mv -i'
 alias a.venv='source $HOME/docs/venv/bin/activate'
@@ -45,4 +44,3 @@ alias gp="git push"
 ####GIT ALIAS ###
 
 alias a.check_ssl='check_ssl() { curl -vvI "$1" ;}; check_ssl '
-alias a.ssh="keychain --eval --quiet ~/.ssh/keys/*.pem"
