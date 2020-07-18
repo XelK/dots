@@ -115,7 +115,8 @@ bindsym $mod+Shift+Right move right
 
 #move workspace to top/down monitor
 #move workspace to output left|right|down|up|current|primary|<output>
-bindsym $mod+Shift+M move workspace to output up
+bindsym $mod+Shift+M move workspace to output left
+#bindsym $mod+Shift+M move workspace to output up
 #bindsym $mod+Shift+D move workspace to output down
 
 # split in horizontal orientation
@@ -177,10 +178,24 @@ bindsym $mod+Shift+0 move container to workspace $WS10
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+r mode "resize"
+bindsym Mod1+m mode "$mode_xrandr"
+set $mode_xrandr Monitor (1) OnlyNotebook, (2) 2Screens, (3) OnlyHDMI, (4) 2ScreensMode2
+
 bindsym XF86MonBrightnessDown exec "light -U 5"
 bindsym XF86MonBrightnessUp exec "light -A 5"
 #### Bind Keys ############################################################################################
 
+
+mode "$mode_xrandr" {
+    bindsym 1 exec "xrandr --output HDMI-1 --off --output eDP-1 --primary --mode 1920x1080"
+    bindsym 2 exec "xrandr  --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 1920x0 --rotate normal"
+    bindsym 3 exec "xrandr  --output eDP-1 --off  --output HDMI-1 --primary  --mode 1920x1080"
+    bindsym 4 exec "xrandr --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+
+}
 
 #### i3 modes ############################################################################################
 # resize window (you can also use the mouse for that)

@@ -24,6 +24,7 @@ cmake
 code
 codeblocks
 ctags
+cups
 dhcpcd
 dialog
 docker
@@ -44,6 +45,7 @@ fzf
 gcc
 gdb
 git
+gnu-netcat
 gparted
 groff
 gtk-theme-arc-gruvbox-git
@@ -62,6 +64,7 @@ i3lock
 ifplugd
 imagemagick
 intel-hybrid-codec-driver
+ipcalc
 iproute2
 ipython
 iw
@@ -88,14 +91,17 @@ man-db
 mingetty
 mpv
 mtools
+mtpfs
 neofetch
 net-tools
 netctl
 nextcloud-client
+nss-mdns
 ntfs-3g
 openssh
 otf-font-awesome
 p7zip
+packettracer
 pacman-contrib
 parcellite
 patch
@@ -103,6 +109,7 @@ pavucontrol
 pcmanfm
 picom
 pkgconf
+pomotroid-bin
 poppler
 powertop
 pulseaudio-alsa
@@ -110,6 +117,7 @@ pulseaudio-bluetooth
 pulseaudio-equalizer-ladspa
 pycharm-community-edition
 python
+python-dbus
 python-ipdb
 python-pip
 python-pudb
@@ -120,7 +128,6 @@ redshift
 reflector
 rofi
 rsync
-screengrab
 sdcv
 simplescreenrecorder
 smartmontools
@@ -129,6 +136,7 @@ spotify
 sshpass
 strace
 sudo
+tcpdump
 teams
 terminus-font
 termite
@@ -139,6 +147,7 @@ tig
 tigervnc
 tlp
 tmux-git
+traceroute
 transmission-gtk
 tree
 ttf-dejavu
@@ -153,6 +162,7 @@ vnote-bin
 w3m
 wget
 whois
+wireguard-tools
 wkhtmltopdf-static
 wpa_supplicant
 xarchiver
@@ -160,6 +170,7 @@ xclip
 xorg-server
 xorg-xinit
 xorg-xinput
+youtube-dl
 zathura
 zathura-pdf-mupdf
 zim

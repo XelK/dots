@@ -33,8 +33,6 @@ alias a.host="sudo vim /etc/hosts"
 alias a.disable.bluetooth="sudo rfkill block bluetooth"
 alias a.randp="< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo"
 alias a.ssh_no_key="ssh -o PreferredAuthentications=keyboard-interactive,password -o PubkeyAuthentication=no"   
-alias a.monitor1="xrandr --output HDMI-1 --off"
-alias a.monitor2="xrandr --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal"
 
 ####GIT ALIAS ###
 alias ga="git add -ma"
