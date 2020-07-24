@@ -64,8 +64,8 @@ bindsym $mod+Page_Down exec "amixer set Master 5%- unmute"
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+a exec --no-startup-id rofi -show window
 
-bindsym $mod+Return exec termite 
-#bindsym $mod+Return exec alacritty 
+#bindsym $mod+Return exec termite 
+bindsym $mod+Return exec kitty 
 
 bindsym $mod+Shift+g mode "$mode_gaps"
 
@@ -188,9 +188,9 @@ bindsym XF86MonBrightnessUp exec "light -A 5"
 
 mode "$mode_xrandr" {
     bindsym 1 exec "xrandr --output HDMI-1 --off --output eDP-1 --primary --mode 1920x1080"
-    bindsym 2 exec "xrandr  --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --mode 1920x1080 --pos 1920x0 --rotate normal"
+    bindsym 2 exec "xrandr  --output eDP-1  --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 1921x0 --rotate normal"
     bindsym 3 exec "xrandr  --output eDP-1 --off  --output HDMI-1 --primary  --mode 1920x1080"
-    bindsym 4 exec "xrandr --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal"
+    bindsym 4 exec "xrandr --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --primary --mode 1920x1080 --pos 0x1081 --rotate normal"
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"

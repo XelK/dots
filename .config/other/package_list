@@ -3,6 +3,7 @@ alsa-tools
 alsa-utils
 android-tools
 android-udev
+arandr
 arc-icon-theme
 arc-solid-gtk-theme
 atool
@@ -12,7 +13,7 @@ aws-cli
 base
 bash-completion
 bc
-bind-tools
+bind
 binutils
 bison
 blueman
@@ -71,13 +72,13 @@ iw
 jdk11-openjdk
 keepassxc
 keychain
+kitty
 libcmrt
 libinput-gestures
 libnotify
 libreoffice-fresh
 libva-utils
 light
-linux
 linux-ck-skylake
 linux-firmware
 linux-lts
@@ -139,7 +140,6 @@ sudo
 tcpdump
 teams
 terminus-font
-termite
 terraform
 texinfo
 thunderbird

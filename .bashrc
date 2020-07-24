@@ -31,6 +31,7 @@ eval $(keychain --noask --eval --quiet ~/.ssh/keys/*.pem);
 
 #export TERMINAL=alacritty
 export TERM=xterm-256color
+#export TERM=xterm-kitty
 export PAGER=vimpager
 
 ### colored man
