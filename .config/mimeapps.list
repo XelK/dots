@@ -4,6 +4,7 @@ application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
 image/png=feh.desktop;
 video/mp4=firefox.desktop;
 video/x-matroska=mpv.desktop;
+text/plain=vim.desktop;
 
 [Default Applications]
 image/jpeg=feh.desktop
@@ -17,3 +18,6 @@ x-scheme-handler/unknown=firefox.desktop
 video/x-matroska=mpv.desktop
 x-scheme-handler/msteams=teams.desktop
 x-scheme-handler/etcher=balena-etcher-electron.desktop
+text/plain=vim.desktop
+
+[Removed Associations]

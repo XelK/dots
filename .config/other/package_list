@@ -24,12 +24,14 @@ clang
 cmake
 code
 codeblocks
+cpupower
 ctags
 cups
 dhcpcd
 dialog
 docker
 dos2unix
+doxygen
 dunst
 duplicity
 dzen2
@@ -42,6 +44,7 @@ feh
 ffmpegthumbnailer
 firefox
 flex
+freerdp
 fzf
 gcc
 gdb
@@ -73,6 +76,7 @@ jdk11-openjdk
 keepassxc
 keychain
 kitty
+lc3tools
 libcmrt
 libinput-gestures
 libnotify
@@ -123,6 +127,7 @@ python-ipdb
 python-pip
 python-pudb
 python-virtualenvwrapper
+qterminal
 ranger
 rdesktop
 redshift
@@ -138,7 +143,6 @@ sshpass
 strace
 sudo
 tcpdump
-teams
 terminus-font
 terraform
 texinfo
@@ -155,6 +159,7 @@ ttf-fira-code
 ttf-font-awesome
 unrar
 unzip
+valgrind
 vim
 vim-plug
 vimpager

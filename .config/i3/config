@@ -309,9 +309,9 @@ exec dunst &
 exec redshift-gtk &
 exec blueman-applet &
 exec keepassxc &
-exec --no-startup-id greenclip daemon>/dev/null
 exec parcellite &
 exec zim &
+exec thunderbird &
 exec termite -e tmux &
 exec libinput-gestures
 exec_always --no-startup-id sh ~/.fehbg
@@ -332,6 +332,7 @@ assign [class="firefox-web"] $WS2
 assign [class="code-oss"] $WS3
 assign [class="Pcmanfm"] $WS4
 assign [class="Zim"] $WS5
+assign [class="Thunderbird"] $WS5
 for_window [class="xfreerdp"] move workspace $WS6, floating disable
 for_window [class="firefox-mess"] move to workspace $WS10
 for_window [class = "Spotify"] move to workspace $WS9
