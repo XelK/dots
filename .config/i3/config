@@ -65,8 +65,8 @@ bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+a exec --no-startup-id rofi -show window
 
 #bindsym $mod+Return exec termite 
-bindsym $mod+Return exec kitty 
-
+#bindsym $mod+Return exec tmux new-window -t 'main' && kitty tmux attach || kitty tmux new-session -A -s main && tmux new-window -t 'main' -n ranger -e ranger && tmux send-keys -t '=main:=ranger' 'ranger' Enter
+bindsym $mod+Return exec tmux new-window -t 'main' && kitty tmux attach || kitty tmux new-session -A -s main ranger 
 bindsym $mod+Shift+g mode "$mode_gaps"
 
 bindsym $mod+Shift+n move scratchpad

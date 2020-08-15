@@ -1,8 +1,8 @@
 [Added Associations]
-image/jpeg=firefox.desktop;feh.desktop;
+image/jpeg=firefox-developer-edition.desktop;feh.desktop;
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
 image/png=feh.desktop;
-video/mp4=firefox.desktop;
+video/mp4=firefox-developer-edition.desktop;
 video/x-matroska=mpv.desktop;
 text/plain=vim.desktop;
 
@@ -10,11 +10,11 @@ text/plain=vim.desktop;
 image/jpeg=feh.desktop
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
 image/png=feh.desktop
-text/html=firefox.desktop
-x-scheme-handler/http=firefox.desktop
-x-scheme-handler/https=firefox.desktop
-x-scheme-handler/about=firefox.desktop
-x-scheme-handler/unknown=firefox.desktop
+text/html=firefox-developer-edition.desktop
+x-scheme-handler/http=firefox-developer-edition.desktop
+x-scheme-handler/https=firefox-developer-edition.desktop
+x-scheme-handler/about=firefox-developer-edition.desktop
+x-scheme-handler/unknown=firefox-developer-edition.desktop
 video/x-matroska=mpv.desktop
 x-scheme-handler/msteams=teams.desktop
 x-scheme-handler/etcher=balena-etcher-electron.desktop

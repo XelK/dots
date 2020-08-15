@@ -97,6 +97,10 @@ map <C-n> :NERDTreeToggle<CR>
 
 let NERDTreeShowHidden=1  "  Always show dot files
 let NERDTreeQuitOnOpen=1
+
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
 map  <Leader>n  :NERDTreeFind<CR>
 
 

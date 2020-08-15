@@ -19,6 +19,7 @@ bison
 blueman
 bluez
 bluez-utils
+borg
 chromium
 clang
 cmake
@@ -33,7 +34,6 @@ docker
 dos2unix
 doxygen
 dunst
-duplicity
 dzen2
 efibootmgr
 etckeeper
@@ -42,7 +42,7 @@ exfat-utils
 fakeroot
 feh
 ffmpegthumbnailer
-firefox
+firefox-developer-edition
 flex
 freerdp
 fzf
@@ -67,6 +67,7 @@ i3blocks
 i3lock
 ifplugd
 imagemagick
+intel-gpu-tools
 intel-hybrid-codec-driver
 ipcalc
 iproute2

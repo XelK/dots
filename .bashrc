@@ -57,11 +57,8 @@ man() {
 #fi
 
 ##### ssh tmux windows name ######
-settitle() {
-    printf "\033k$1\033\\"
-}
 
-ss(){
+ss() {
 	#ssh $(cat .ssh/known_hosts|awk -F ',' '{print $1}'|awk -F ' ' '{print $1}'|fzf)
 	#ssh $(cat .ssh/hosts|fzf)
 	ssh $(cat .ssh/hosts|fzf|awk -F "-" '{print $1}')
@@ -79,7 +76,8 @@ fi
 
 export EDITOR=vim
 export VISUAL=vim
-#export BROWSER=firefox
+export MOZ_X11_EGL=1 #need for firefox hardware video decode
+export BROWSER=firefox-developer-edition
 
 complete -cf sudo
 
