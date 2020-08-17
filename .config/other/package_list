@@ -3,7 +3,6 @@ alsa-tools
 alsa-utils
 android-tools
 android-udev
-arandr
 arc-icon-theme
 arc-solid-gtk-theme
 atool
@@ -128,7 +127,6 @@ python-ipdb
 python-pip
 python-pudb
 python-virtualenvwrapper
-qterminal
 ranger
 rdesktop
 redshift

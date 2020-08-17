@@ -64,9 +64,10 @@ bindsym $mod+Page_Down exec "amixer set Master 5%- unmute"
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+a exec --no-startup-id rofi -show window
 
-#bindsym $mod+Return exec termite 
-#bindsym $mod+Return exec tmux new-window -t 'main' && kitty tmux attach || kitty tmux new-session -A -s main && tmux new-window -t 'main' -n ranger -e ranger && tmux send-keys -t '=main:=ranger' 'ranger' Enter
-bindsym $mod+Return exec tmux new-window -t 'main' && kitty tmux attach || kitty tmux new-session -A -s main ranger 
+set $kitty_start tmux new-window -t 'main' && kitty tmux attach || kitty tmux new-session -A -s main ranger 
+set $kitty_attach tmux new-window -t 'main' && kitty tmux attach || kitty tmux new-session -A -s main ranger 
+
+bindsym $mod+Return exec $kitty_attach
 bindsym $mod+Shift+g mode "$mode_gaps"
 
 bindsym $mod+Shift+n move scratchpad
@@ -156,7 +157,7 @@ bindsym $mod+1 workspace $WS1
 bindsym $mod+2 workspace $WS2
 bindsym $mod+3 workspace $WS3
 bindsym $mod+4 workspace $WS4
-bindsym $mod+5 workspace $WS5
+bindsym $mod+5 workspace $WS5; layout tabbed
 bindsym $mod+6 workspace $WS6
 bindsym $mod+7 workspace $WS7
 bindsym $mod+8 workspace $WS8
@@ -312,11 +313,12 @@ exec keepassxc &
 exec parcellite &
 exec zim &
 exec thunderbird &
-exec termite -e tmux &
+exec $kitty_start
 exec libinput-gestures
 exec_always --no-startup-id sh ~/.fehbg
 exec_always --no-startup-id picom -b 
 exec --no-startup-id /usr/bin/xset b off
+
 #exec --no-startup-id firefox -P web --class firefox-web
 #exec --no-startup-id firefox -P mess --class firefox-mess
 #exec --no-startup-id pcmanfm
@@ -327,7 +329,7 @@ exec --no-startup-id /usr/bin/xset b off
 
 ##### Rules ############################################################################################
 ## Rules Assign foo to workspaces  using xprop for determinate program class
-assign [class="Termite"] $WS1
+#assign [class="Termite"] $WS1
 assign [class="firefox-web"] $WS2
 assign [class="code-oss"] $WS3
 assign [class="Pcmanfm"] $WS4
