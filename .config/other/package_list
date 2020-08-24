@@ -63,7 +63,7 @@ htop
 hugo
 i3-gaps
 i3blocks
-i3lock
+i3lock-color
 ifplugd
 imagemagick
 intel-gpu-tools
@@ -172,6 +172,8 @@ wpa_supplicant
 xarchiver
 xclip
 xorg-server
+xorg-xdpyinfo
+xorg-xev
 xorg-xinit
 xorg-xinput
 youtube-dl

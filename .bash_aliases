@@ -39,6 +39,7 @@ alias ga="git add -ma"
 alias gs="git status"
 alias gc="git commit"
 alias gp="git push"
+alias gl="git log --graph --oneline --decorate --all"
 ####GIT ALIAS ###
 
 alias a.check_ssl='check_ssl() { curl -vvI "$1" ;}; check_ssl '
