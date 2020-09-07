@@ -1,4 +1,7 @@
-#! /bin/sh
+#!/bin/bash
+
+source colors
+color=$grey
 
 DATEFTM="${DATEFTM:-+%a. %d. %b. %Y}"
 SHORTFMT="${SHORTFMT:-+%d.%m.%Y}"
@@ -26,7 +29,7 @@ cal --color=always $month $year \
         -dmenu \
         -markup-rows \
         -no-fullscreen \
-        -font "Monospace 12" \
+        -font "Monospace 10" \
         -hide-scrollbar \
         -bw 2 \
         -m -3 \

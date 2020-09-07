@@ -20,4 +20,4 @@ if [[ "$(echo "$INFO" | grep -o "Charging")" ]]; then ICON_COLOR="green"; fi
 
 if [[ "$BLOCK_BUTTON" == 1 ]]; then TEXT="<span color='$MAIN_COLOR'>$LEVEL_PRCNTS</span>"; fi
 
-echo "<span color='$ICON_COLOR'>$ICON</span> "$TEXT
+echo "<span color='$ICON_COLOR'>$ICON</span>"$TEXT

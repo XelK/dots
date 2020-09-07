@@ -2,15 +2,7 @@
 
 command=$HOME/.config/i3blocks/$BLOCK_NAME
 separator_block_width=15
-#markup=nonelan
 markup=pango
-
-#[window title]
-#command=xdotool getactivewindow getwindowname
-#interval=3
-##color=#A6D1FA
-#min_width=1920
-#align=center
 
 [spotify]
 max_width=20
@@ -24,34 +16,23 @@ interval=3600
 label= 
 #color=#A4C2F4
 
+[keyboard]
+interval=3
+
+[volume]
+LABEL= 
+interval=3
+#signal=10
+
 [memory]
-#command= free -h|grep Mem|awk '{print $3"/"$2}'
 interval=10
-#label= 
-#label= 
 
 [wifi]
-label= 
 INTERFACE=wlp0s20f3
 interval=60
 
 [battery]
 interval=60
-#LABEL=BAT
-#BAT_NUMBER=0
-LABEL=⚡ 
 
-[key_layout]
-command=case "$(xset -q|grep LED| awk '{ print $10 }')" in   "00001000") echo "En" ;;   "00000000") echo "It" ;;   *) KBD="unknown" ;; esac
-interval=3
-label= 
-
-[volume]
-LABEL=  
-interval=3
-#signal=10
-
-[rofi-calendar]
+[date]
 interval=5
-LABEL= 
-DATEFTM=+%H:%M

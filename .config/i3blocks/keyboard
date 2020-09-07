@@ -1,0 +1,21 @@
+#!/bin/bash
+
+source colors
+color=$white
+icon=
+
+if [[ "$(xset -q|grep LED| awk '{ print $10 }')" =~ "00001000" ]]
+then 
+	lang="en"
+else
+	lang="it"
+fi
+
+if [[ "$(xset -q | grep Caps | awk '{ print $4 }')" =~ "off" ]]
+	then color=$grey
+else
+	color=$red
+fi
+
+TEXT="<span color='$color'>$lang</span>"
+echo $TEXT

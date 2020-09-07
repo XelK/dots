@@ -1,6 +1,8 @@
 #### i3 config ############################################################################################
 set $mod Mod4
-font pango:Fira Code Retina 12
+#set $mod Mod1
+#font pango:Source Code Pro Bold 10
+font pango:Fira Code Retina 10
 # boarder style for new window
 new_window pixel 5
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -11,8 +13,8 @@ floating_minimum_size 10 x 10
 
 # gaps
 for_window [class="^.*"] border pixel $BORDER_SIZE
-#gaps inner 10
-gaps outer 20
+gaps inner 10
+gaps outer 5
 
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -30,20 +32,22 @@ workspace_auto_back_and_forth yes
 force_display_urgency_hint 500 ms
 
 # ASSIGN WORKSPACE VARIABLES
-set $WS1 1
-set $WS2 2
-set $WS3 3
-set $WS4 4
-set $WS5 5
-set $WS6 6
-set $WS7 7
-set $WS8 8
-set $WS9 9
+set $WS1 01
+set $WS2 02
+set $WS3 03
+set $WS4 04
+set $WS5 05
+set $WS6 06
+set $WS7 07
+set $WS8 08
+set $WS9 09
 set $WS10 10
 #### i3 config ############################################################################################
 
+
+
 #### Bind Keys ############################################################################################
-bindsym --release $mod+m exec "maim -s -u -D -k | xclip -selection clipboard -t image/png -i"
+bindsym --release $mod+m exec "sh ~/.config/i3/screenshot.sh"
 # kill focused window
 bindsym $mod+Shift+q kill 
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ unmute
@@ -63,11 +67,11 @@ bindsym $mod+Page_Down exec "amixer set Master 5%- unmute"
 
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+a exec --no-startup-id rofi -show window
+bindsym $mod+z exec --no-startup-id "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
 
-set $kitty_start tmux new-window -t 'main' && kitty tmux attach || kitty tmux new-session -A -s main ranger 
-set $kitty_attach tmux new-window -t 'main' && kitty tmux attach || kitty tmux new-session -A -s main ranger 
+bindsym $mod+Return exec alacritty #termite 
 
-bindsym $mod+Return exec $kitty_attach
+bindsym $mod+Shift+g mode "$mode_gaps"
 
 bindsym $mod+Shift+n move scratchpad
 bindsym $mod+n scratchpad show
@@ -96,8 +100,8 @@ bindsym Mod1+Tab focus left
 bindsym Mod1+Shift+Tab focus down
 #bindsym $mod+Tab workspace back_and_forth
 
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+bracketright workspace next
+bindsym $mod+bracketleft workspace prev
 bindsym $mod+Shift+bracketright   move container to workspace next
 bindsym $mod+Shift+bracketleft  move container to workspace prev
 
@@ -115,8 +119,7 @@ bindsym $mod+Shift+Right move right
 
 #move workspace to top/down monitor
 #move workspace to output left|right|down|up|current|primary|<output>
-bindsym $mod+Shift+M move workspace to output left
-#bindsym $mod+Shift+M move workspace to output up
+bindsym $mod+Shift+M move workspace to output up
 #bindsym $mod+Shift+D move workspace to output down
 
 # split in horizontal orientation
@@ -129,7 +132,7 @@ bindsym $mod+v split h
 bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+q layout stacking
+bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+y layout toggle all
@@ -147,16 +150,12 @@ bindsym $mod+b border toggle
 # focus the child container
 bindsym $mod+c focus child
 
-# sticky window
-bindsym $mod+s exec i3-msg "[id=$(xdotool getactivewindow)] sticky enable" 
-bindsym $mod+Shift+s exec i3-msg "[id=$(xdotool getactivewindow)] sticky disable" 
-
 # switch to workspace
 bindsym $mod+1 workspace $WS1
 bindsym $mod+2 workspace $WS2
 bindsym $mod+3 workspace $WS3
 bindsym $mod+4 workspace $WS4
-bindsym $mod+5 workspace $WS5; layout tabbed
+bindsym $mod+5 workspace $WS5
 bindsym $mod+6 workspace $WS6
 bindsym $mod+7 workspace $WS7
 bindsym $mod+8 workspace $WS8
@@ -178,26 +177,10 @@ bindsym $mod+Shift+0 move container to workspace $WS10
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+r mode "resize"
-bindsym Mod1+m mode "$mode_xrandr"
-set $mode_xrandr Monitor (1) OnlyNotebook, (2) 2Screens, (3) OnlyHDMI, (4) 2ScreensMode2
-
-bindsym $mod+Shift+g mode "$mode_gaps"
-
 bindsym XF86MonBrightnessDown exec "light -U 5"
 bindsym XF86MonBrightnessUp exec "light -A 5"
 #### Bind Keys ############################################################################################
 
-
-mode "$mode_xrandr" {
-    bindsym 1 exec "xrandr --output HDMI-1 --off --output eDP-1 --primary --mode 1920x1080"
-    bindsym 2 exec "xrandr  --output eDP-1  --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 1921x0 --rotate normal"
-    bindsym 3 exec "xrandr  --output eDP-1 --off  --output HDMI-1 --primary  --mode 1920x1080"
-    bindsym 4 exec "xrandr --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --primary --mode 1920x1080 --pos 0x1081 --rotate normal"
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-
-}
 
 #### i3 modes ############################################################################################
 # resize window (you can also use the mouse for that)
@@ -265,61 +248,13 @@ mode "$mode_gaps_outer" {
 }
 #### i3 modes ############################################################################################
            
-# set primary gruvbox colorscheme colors
-set $bg #282828
-set $red #cc241d
-set $green #98971a
-set $yellow #d79921
-set $blue #458588
-set $purple #b16286
-set $aqua #689d68
-set $grey #a89984
-set $darkgray #1d2021
-set $black #000000
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 ## finds out, if available)
 bar {
-        status_command i3blocks
-		position top
-		tray_output none
-		colors {
-        	background $bg
-        	# text color used for blocks that do not have a color specified.
-        	statusline $grey
-        	# workspaces section
-        	#                    border		backgr. 	text
-        	focused_workspace    $grey 		$black 		$yellow
-        	inactive_workspace   $bg 		$bg 		$grey
-        	active_workspace     $black 	$darkgray 	$yellow
-        	urgent_workspace     $red 		$darkgray 	$grey
-    	}
+         status_command i3blocks
 }
-
-bar {
- id bar-tray
- output primary
- i3bar_command             i3bar -t
- colors {
-         background        "#00000000"
-         }
- position                  bottom
- height                    24
- tray_padding              0
- workspace_buttons         no
- mode                      hide
- hidden_state              hide
- modifier                  Mod1
-}
-
-# https://github.com/a-schaefers/i3-wm-gruvbox-theme/blob/master/i3/config
-# class                 border		|backgr		|text		|indicator		|child_border
-client.focused          $black 		$black 		$yellow 	$purple 		$yellow
-client.focused_inactive $darkgray 	$darkgray 	$yellow 	$purple 		$darkgray
-client.unfocused        $darkgray 	$bg 		$grey 		$purple 		$darkgray
-client.urgent           $red 		$red 		$black 		$red 			$red
-
 
 
 ##### Start Up ############################################################################################
@@ -327,15 +262,14 @@ exec dunst &
 exec redshift-gtk &
 exec blueman-applet &
 exec keepassxc &
-exec parcellite &
+exec --no-startup-id greenclip daemon>/dev/null
+#exec parcellite &
 exec zim &
-exec thunderbird &
-exec $kitty_start
+exec termite -e tmux &
 exec libinput-gestures
 exec_always --no-startup-id sh ~/.fehbg
 exec_always --no-startup-id picom -b 
 exec --no-startup-id /usr/bin/xset b off
-
 #exec --no-startup-id firefox -P web --class firefox-web
 #exec --no-startup-id firefox -P mess --class firefox-mess
 #exec --no-startup-id pcmanfm
@@ -346,12 +280,11 @@ exec --no-startup-id /usr/bin/xset b off
 
 ##### Rules ############################################################################################
 ## Rules Assign foo to workspaces  using xprop for determinate program class
-#assign [class="Termite"] $WS1
+assign [class="Termite"] $WS1
 assign [class="firefox-web"] $WS2
 assign [class="code-oss"] $WS3
 assign [class="Pcmanfm"] $WS4
 assign [class="Zim"] $WS5
-assign [class="Thunderbird"] $WS5
 for_window [class="xfreerdp"] move workspace $WS6, floating disable
 for_window [class="firefox-mess"] move to workspace $WS10
 for_window [class = "Spotify"] move to workspace $WS9
@@ -359,4 +292,38 @@ for_window [class = "Spotify"] move to workspace $WS9
 for_window [class="KeePassXC"] floating enable
 ##### Rules ############################################################################################
 
+
+##### colors ############################################################################################
+client.focused #0088CC #0088CC #ffffff #dddddd
+client.focused_inactive #333333 #333333 #888888 #292d2e
+client.unfocused #333333 #333333 #888888 #292d2e
+client.urgent #2f343a #900000 #ffffff #900000
+##### colors ############################################################################################
+
+
+### darcula ###
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+client.background       #F8F8F2
+
+#bar {
+#  colors {
+#    background #282A36
+#    statusline #F8F8F2
+#    separator  #44475A
+#
+#    focused_workspace  #44475A #44475A #F8F8F2
+#    active_workspace   #282A36 #44475A #F8F8F2
+#    inactive_workspace #282A36 #282A36 #BFBFBF
+#    urgent_workspace   #FF5555 #FF5555 #F8F8F2
+#    binding_mode       #FF5555 #FF5555 #F8F8F2
+#  }
+#}
+#
+#bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
 

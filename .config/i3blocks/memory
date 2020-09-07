@@ -1,0 +1,22 @@
+#!/bin/bash
+
+source colors
+color=$grey
+icon=
+
+free=`free|grep Mem|awk '{print $7}'`
+pfree=`free -h|grep Mem|awk '{print $7}'`
+
+if [ $free -lt 500000 ]; then
+	color=$red
+elif [ $free -lt 1024000 ]; then
+	color=$yellow
+fi
+
+if [[ "$BLOCK_BUTTON" == 1 ]];
+	then TEXT="<span color='$color'>$icon $pfree</span>"
+else
+	TEXT="<span color='$color'>$icon</span>"
+fi
+
+echo $TEXT

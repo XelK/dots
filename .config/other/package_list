@@ -25,6 +25,7 @@ cmake
 code
 codeblocks
 cpupower
+crda
 ctags
 cups
 dhcpcd
@@ -84,6 +85,7 @@ libreoffice-fresh
 libva-utils
 light
 linux-ck-skylake
+linux-ck-skylake-headers
 linux-firmware
 linux-lts
 linux-lts-headers
@@ -93,10 +95,10 @@ m4
 maim
 make
 man-db
-mingetty
 mpv
 mtools
 mtpfs
+mupdf
 neofetch
 net-tools
 netctl
@@ -159,9 +161,13 @@ ttf-font-awesome
 unrar
 unzip
 valgrind
+vde2
 vim
 vim-plug
 vimpager
+virtualbox
+virtualbox-guest-iso
+virtualbox-host-dkms
 vnote-bin
 w3m
 wget
@@ -179,5 +185,6 @@ xorg-xinput
 youtube-dl
 zathura
 zathura-pdf-mupdf
+zathura-ps
 zim
 zip

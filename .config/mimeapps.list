@@ -8,7 +8,7 @@ text/plain=vim.desktop;
 
 [Default Applications]
 image/jpeg=feh.desktop
-application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
+application/pdf=org.pwmt.zathura.desktop
 image/png=feh.desktop
 text/html=firefox-developer-edition.desktop
 x-scheme-handler/http=firefox-developer-edition.desktop
@@ -19,5 +19,8 @@ video/x-matroska=mpv.desktop
 x-scheme-handler/msteams=teams.desktop
 x-scheme-handler/etcher=balena-etcher-electron.desktop
 text/plain=vim.desktop
+application/ps=org.pwmt.zathura.desktop
+application/postscript=org.pwmt.zathura.desktop
+application/fb2=org.pwmt.zathura.desktop
 
 [Removed Associations]

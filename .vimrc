@@ -1,3 +1,4 @@
+au! BufNewFile,BufRead *.asm set ff=dos
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'

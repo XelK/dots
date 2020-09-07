@@ -1,0 +1,16 @@
+#!/bin/bash
+
+source colors
+color=$grey
+icon= 
+
+LONG=`date +"%H:%M:%S %Y.%m.%d"`
+SHORT=`date +"%H:%M"`
+
+if [[ "$BLOCK_BUTTON" == 1 ]];
+     then TEXT="<span color=\"${color}\">${icon} ${LONG}</span>"
+ else
+     TEXT="<span color=\"${color}\">${icon} ${SHORT} </span>"
+ fi
+
+echo $TEXT
