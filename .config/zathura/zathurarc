@@ -1,0 +1,23 @@
+set font "Fira Code Retina 10"
+set continuous-hist-save true
+set incremental-search true
+set nohlsearch true
+set n-completion-items 50
+set page-padding 0
+set recolor-keephue true
+set recolor-darkcolor  "#D8D8D8" #"#BDBDBD"
+set show-recent 50
+set statusbar-home-tilde true
+set window-icon-document true
+set window-title-basename true
+set selection-clipboard clipboard
+set window-height 780
+set window-width 600
+set adjust-open "best-fit"
+set advance-pages-per-row true
+set render-loading false
+set scroll-full-overlap 0.10
+set scroll-page-aware true
+set window-title-page true
+set zoom-max 1600
+set zoom-min 1
