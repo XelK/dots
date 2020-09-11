@@ -1,20 +1,16 @@
 #SCRIPT_DIR=$HOME/.config/i3blocks
 
 command=$HOME/.config/i3blocks/$BLOCK_NAME
-separator_block_width=15
+separator_block_width=10
 markup=pango
 
 [spotify]
 max_width=20
 interval=5
-label= 
 
 # Guess the weather hourly
 [weather]
-command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
 interval=3600
-label= 
-#color=#A4C2F4
 
 [keyboard]
 interval=3

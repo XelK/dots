@@ -1,21 +1,34 @@
 #!/bin/bash
 
 source colors
-color=$white
+color=$grey
 icon=
+us="0000000"
 
-if [[ "$(xset -q|grep LED| awk '{ print $10 }')" =~ "00001000" ]]
+if [[ "$(xset -q|grep LED| awk '{ print $10 }')" == *$us*  ]]
 then 
-	lang="en"
+	lang="us"
 else
 	lang="it"
 fi
 
-if [[ "$(xset -q | grep Caps | awk '{ print $4 }')" =~ "off" ]]
-	then color=$grey
-else
-	color=$red
+if [[ "$(xset -q | grep Caps | awk '{ print $4 }')" =~ "on" ]]
+	then 
+		lang=${lang^^}
 fi
 
 TEXT="<span color='$color'>$lang</span>"
 echo $TEXT
+
+if [[ "$BLOCK_BUTTON" == 1 ]]; 
+#if [[ true ]]; 
+then 
+	if [[ $lang =~ "us" ]]; 
+	then
+		setxkbmap -layout it,us -variant ,intl -option grp:ctrl_alt_toggle
+		echo "changing to it"
+	else
+		setxkbmap -layout us,it -variant intl, -option grp:ctrl_alt_toggle
+		echo "changing to us"
+	fi
+fi
