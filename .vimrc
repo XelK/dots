@@ -143,7 +143,8 @@ set scrolloff=999
 
 set encoding=utf-8
 
-set relativenumber              " show line numbers
+"set relativenumber              " show line numbers
+set number              " show line numbers
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
 set ruler               " show the cursor position all the time

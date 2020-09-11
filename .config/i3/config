@@ -11,8 +11,8 @@ floating_minimum_size 10 x 10
 
 # gaps
 for_window [class="^.*"] border pixel $BORDER_SIZE
-#gaps inner 10
-gaps outer 20
+gaps inner 6
+gaps outer 3
 
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -283,6 +283,7 @@ set $black #000000
 bar {
         status_command i3blocks
 		position top
+ 		height   20
 		tray_output none
 		colors {
         	background $bg
@@ -310,7 +311,7 @@ bar {
  workspace_buttons         no
  mode                      hide
  hidden_state              hide
- modifier                  Mod1
+ modifier                  $mod
 }
 
 # https://github.com/a-schaefers/i3-wm-gruvbox-theme/blob/master/i3/config
