@@ -114,6 +114,7 @@ parcellite
 patch
 pavucontrol
 pcmanfm
+pdftk
 picom
 pkgconf
 pomotroid-bin
@@ -151,6 +152,7 @@ tig
 tigervnc
 tlp
 tmux-git
+torbrowser-launcher
 traceroute
 transmission-gtk
 tree

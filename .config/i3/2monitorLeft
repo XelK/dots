@@ -1,0 +1,4 @@
+xrandr --output eDP-1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 1921x0 --rotate normal && 
+sed -i     's/^set $nextMonitor up/set $nextMonitor left/g' /home/alex/.config/i3/config &&
+#sed -i '    s/^set $nextMonitor left/set $nextMonitor up/g' /home/alex/.config/i3/config && 
+i3-msg reload
