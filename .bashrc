@@ -21,10 +21,7 @@ complete -o bashdefault -o default -F _fzf_path_completion zathura
 
 # virtualenv
 export WORKON_HOME=$HOME/.local/virtualenvs
-export MSYS_HOME=/c/msys/1.0
 source /usr/bin/virtualenvwrapper_lazy.sh
-
-
 	
 eval $(keychain --noask --eval --quiet ~/.ssh/keys/*.pem);
 
@@ -65,7 +62,7 @@ ss() {
 }
 
 
-PATH=$PATH:/usr/local/bin:~/docs/src
+PATH=$PATH:/usr/local/bin:~/docs/src/bin
 XDG_CONFIG_HOME=$HOME/.config
 XDG_CACHE_HOME=$HOME/.cache
 XDG_DATA_HOME=$HOME/.local/share

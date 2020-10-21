@@ -35,9 +35,9 @@ alias a.randp="< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo"
 alias a.ssh_no_key="ssh -o PreferredAuthentications=keyboard-interactive,password -o PubkeyAuthentication=no"   
 
 ####GIT ALIAS ###
-alias ga="git add -ma"
+alias ga="git add ./*"
 alias gs="git status"
-alias gc="git commit"
+alias gc="git commit -m"
 alias gp="git push"
 alias gl="git log --graph --oneline --decorate --all"
 ####GIT ALIAS ###
