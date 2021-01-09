@@ -43,17 +43,22 @@ set $WS10 10
 #### i3 config ############################################################################################
 
 #### Bind Keys ############################################################################################
-bindsym --release $mod+m exec "maim -s -u -D -k | xclip -selection clipboard -t image/png -i"
+#bindsym --release $mod+m exec "maim -s -u -D -k | xclip -selection clipboard -t image/png -i"
+bindsym --release $mod+m exec $SRC/screen.sh
+
+#
 # kill focused window
 bindsym $mod+Shift+q kill 
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ unmute
-bindsym XF86AudioLowerVolume exec amixer set Master 5%- unmute
+
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ unmute $PrintVolume
+bindsym XF86AudioLowerVolume exec amixer set Master 5%- unmute $PrintVolume
 bindsym XF86AudioMute exec amixer set Master toggle
 bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
 bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
 bindsym XF86AudioPrev exec  "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 bindsym XF86AudioNext exec  "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
 
+# Anne Pro keyboard shourtcats
 bindsym $mod+Delete exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
 bindsym $mod+Home exec  "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 bindsym $mod+End exec  "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
@@ -61,8 +66,8 @@ bindsym $mod+Page_Up exec "amixer set Master 5%+ unmute"
 bindsym $mod+Page_Down exec "amixer set Master 5%- unmute"
 
 
-bindsym $mod+d exec --no-startup-id rofi -show run
-bindsym $mod+a exec --no-startup-id rofi -show window
+bindsym $mod+d exec --no-startup-id rofi -show run -show-icons
+bindsym $mod+a exec --no-startup-id rofi -show window -show-icons 
 
 set $kitty_start tmux new-window -t 'main' && kitty tmux attach || kitty tmux new-session -A -s main ranger 
 set $kitty_attach tmux new-window -t 'main' && kitty tmux attach || kitty tmux new-session -A -s main ranger 
@@ -80,7 +85,7 @@ bindsym $mod+l focus right
 
 
 #exec --no-startup-id ~/.config/i3/last_window.sh
-bindsym $mod+m [con_mark=_last] focus
+#bindsym $mod+m [con_mark=_last] focus
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -265,7 +270,8 @@ mode "$mode_gaps_outer" {
 # set primary gruvbox colorscheme colors
 set $bg #282828
 set $red #cc241d
-set $green #98971a
+set $green #7EB0A5 
+#old #98971a ##
 set $yellow #d79921
 set $blue #458588
 set $purple #b16286
@@ -278,7 +284,9 @@ set $black #000000
 # Start i3bar to display a workspace bar (plus the system information i3status
 ## finds out, if available)
 bar {
-        status_command i3blocks
+		#font pango:Fira Code Retina 12, Noto Color Emoji 10
+		font pango:Fira Code Retina 12
+        status_command i3blocks -vv
 		position top
  		height   20
 		tray_output none
@@ -288,10 +296,10 @@ bar {
         	statusline $grey
         	# workspaces section
         	#                    border		backgr. 	text
-        	focused_workspace    $grey 		$black 		$yellow
+        	focused_workspace    $green 	$bg 		$green
         	inactive_workspace   $bg 		$bg 		$grey
-        	active_workspace     $black 	$darkgray 	$yellow
-        	urgent_workspace     $red 		$darkgray 	$grey
+        	active_workspace     $bg 		$bg 		$green
+        	urgent_workspace     $red 		$bg 		$red
     	}
 }
 
@@ -313,7 +321,7 @@ bar {
 
 # https://github.com/a-schaefers/i3-wm-gruvbox-theme/blob/master/i3/config
 # class                 border		|backgr		|text		|indicator		|child_border
-client.focused          $black 		$black 		$yellow 	$purple 		$yellow
+client.focused          $black 		$black 		$yellow 	$darkgray 		$green
 client.focused_inactive $darkgray 	$darkgray 	$yellow 	$purple 		$darkgray
 client.unfocused        $darkgray 	$bg 		$grey 		$purple 		$darkgray
 client.urgent           $red 		$red 		$black 		$red 			$red
@@ -322,8 +330,9 @@ client.urgent           $red 		$red 		$black 		$red 			$red
 
 ##### Start Up ############################################################################################
 exec dunst &
-exec redshift-gtk &
-exec blueman-applet &
+exec --no-startup-id redshift-gtk
+#exec --no-startup-id nextcloud
+#exec blueman-applet &
 exec keepassxc &
 exec parcellite &
 exec zim &
@@ -334,10 +343,10 @@ exec_always --no-startup-id sh ~/.fehbg
 exec_always --no-startup-id picom -b 
 exec --no-startup-id /usr/bin/xset b off
 
-#exec --no-startup-id firefox -P web --class firefox-web
+exec --no-startup-id firefox-developer-edition -P web --class firefox-web
 #exec --no-startup-id firefox -P mess --class firefox-mess
 #exec --no-startup-id pcmanfm
-#exec --no-startup-id spotify
+exec --no-startup-id spotify
 #exec --no-startup-id code
 ##### Start Up ############################################################################################
 

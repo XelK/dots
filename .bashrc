@@ -11,25 +11,29 @@
 #fi
 
 
+#export WIKI="~/docs/wiki"
+#export WIKIHTML="~/docs/wiki_html"
+#export WIKIIMG="~/docs/wiki/img"
+#export TERM=xterm-kitty
+#export PAGER=vimpager
+export FZF_DEFAULT_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+
 stty -ixon
 
 source /usr/share/fzf/completion.bash
 source /usr/share/fzf/key-bindings.bash
-export FZF_DEFAULT_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null ||
-cat {} || tree -C {}) 2> /dev/null | head -200'"
 complete -o bashdefault -o default -F _fzf_path_completion zathura
 
 # virtualenv
-export WORKON_HOME=$HOME/.local/virtualenvs
 source /usr/bin/virtualenvwrapper_lazy.sh
 	
 eval $(keychain --noask --eval --quiet ~/.ssh/keys/*.pem);
 
 
 #export TERMINAL=alacritty
-export TERM=xterm-256color
-#export TERM=xterm-kitty
-export PAGER=vimpager
+#export TERM=xterm-256color
+
+
 
 ### colored man
 man() {
@@ -62,7 +66,7 @@ ss() {
 }
 
 
-PATH=$PATH:/usr/local/bin:~/docs/src/bin
+PATH=$PATH:/usr/local/bin:~/docs/bin
 XDG_CONFIG_HOME=$HOME/.config
 XDG_CACHE_HOME=$HOME/.cache
 XDG_DATA_HOME=$HOME/.local/share

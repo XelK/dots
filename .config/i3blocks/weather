@@ -2,9 +2,16 @@
 
 source colors
 color=$grey
-icon=
+#icon=
 
-weather=`curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2`
+weather_long=$(curl -s curl -s wttr.in/?format="%l:+%C+%t/%f+%w+%p+%P=%m\n")
+weather_short=$(curl -s wttr.in/?format="+%C+%f+%w+%p\n")
 
-TEXT="$icon $weather"
+if [[ "$BLOCK_BUTTON" == 1 ]]; 
+	then 
+		TEXT="$icon $weather_long"
+	else
+		TEXT="$icon $weather_short"
+fi
+
 echo $TEXT

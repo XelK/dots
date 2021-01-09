@@ -5,6 +5,7 @@ image/png=feh.desktop;
 video/mp4=firefox-developer-edition.desktop;
 video/x-matroska=mpv.desktop;
 text/plain=vim.desktop;
+application/atom+xml=thunderbird.desktop;
 
 [Default Applications]
 image/jpeg=feh.desktop

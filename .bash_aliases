@@ -4,8 +4,10 @@ alias dots.ls='dots ls-tree -r master --name-only'
 alias dots.up='dots commit -am "update" && dots push'
 alias dots.stat='dots status'
 #### dots manager ####
+
 alias xclip='xclip -selection c'
 alias mv='mv -i'
+alias man='man -a'
 alias a.venv='source $HOME/docs/venv/bin/activate'
 alias a.curl='curl -kIL'
 alias cp='cp -i'
@@ -25,10 +27,6 @@ alias tailf="tail -f"
 alias a.weather="curl wttr.in/Milan"
 alias a.myip="curl ifconfig.co"
 alias powertop="sudo powertop"
-alias v="vim"
-alias svim="sudoedit"
-alias fuck='sudo $(history -p !!)'
-alias nmap="sudo nmap"
 alias a.host="sudo vim /etc/hosts"
 alias a.disable.bluetooth="sudo rfkill block bluetooth"
 alias a.randp="< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo"
@@ -37,9 +35,13 @@ alias a.ssh_no_key="ssh -o PreferredAuthentications=keyboard-interactive,passwor
 ####GIT ALIAS ###
 alias ga="git add ./*"
 alias gs="git status"
-alias gc="git commit -m"
+alias gc="git commit -m $1"
 alias gp="git push"
 alias gl="git log --graph --oneline --decorate --all"
 ####GIT ALIAS ###
+
+
+alias vmw="vim -c VimwikiIndex"
+
 
 alias a.check_ssl='check_ssl() { curl -vvI "$1" ;}; check_ssl '

@@ -1,17 +1,5 @@
 au! BufNewFile,BufRead *.asm set ff=dos
-" Specify a directory for plugins
-" - For Neovim: stdpath('data') . '/plugged'
-" - Avoid using standard Vim directory names like 'plugin'
 set nocompatible
-
-""$XDG_CONFIG_HOME"/vim/vimrc
-"
-"set undodir=$XDG_DATA_HOME/vim/undo
-"set directory=$XDG_DATA_HOME/vim/swap
-"set backupdir=$XDG_DATA_HOME/vim/backup
-"set viminfo+='1000,n$XDG_DATA_HOME/vim/viminfo
-"set runtimepath=$XDG_CONFIG_HOME/vim,$VIMRUNTIME,$XDG_CONFIG_HOME/vim/after
-
 
 call plug#begin('$HOME/.vim/plugged')
 
@@ -19,35 +7,13 @@ Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug '/usr/bin/fzf'
 Plug 'junegunn/fzf'
-"Plug 'dracula/vim'
-"Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'tibabit/vim-templates'
 
-
-"Plug 'python-rope/ropevim'
-"Plug 'davidhalter/jedi-vim'
-"Plug 'SirVer/ultisnips', { 'commit': 'a909dee82b6eaaa3ae001e27c3e95c58d487d242'}
-"Plug 'honza/vim-snippets'
-"Plug 'tpope/vim-fugitive'
-"Plug 'w0rp/ale'
-"Plug 'sheerun/vim-polyglot'
-"Plug 'ludovicchabant/vim-gutentags'
-"Plug 'airblade/vim-gitgutter'
-"Plug 'majutsushi/tagbar'
-
-
-" Python
-"Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
-" Python
-
-
-
-
-"Plug 'tmhedberg/SimpylFold'
+Plug 'vimwiki/vimwiki'
 
 "markdown
 "Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
+"Plug 'plasticboy/vim-markdown'
 "
 Plug 'airblade/vim-gitgutter' "show git difference
 Plug 'jiangmiao/auto-pairs'   "add close brackets
@@ -65,6 +31,34 @@ Plug 'morhetz/gruvbox'
 
 call plug#end()
 
+" vimwiki configs
+let g:vimwiki_folding = 'custom'
+ let g:vimwiki_list = [{'path': $WIKI, 'path_html': $WIKI_HTML,'template_path': '$WIKI/stuff','template_default': 'default','template_ext': '.html'}]
+"let g:vimwiki_list = [{'path': $WIKI, 'path_html': $WIKI_HTML,'template_path': '$WIKI/stuff','syntax': 'markdown','ext':'.md','template_default': 'default','template_ext': '.html','custom_wiki2html':'vimwiki_markdown'}]
+
+"let g:vimwiki_list = [{
+"	\ 'path': $WIKI,
+"	\ 'template_path': '$WIKI/stuff/',
+"	\ 'template_default': 'default',
+"	\ 'syntax': 'markdown',
+"	\ 'ext': '.md',
+"	\ 'path_html': $WIKI_HTML,
+"	\ 'custom_wiki2html': 'vimwiki_markdown',
+"	\ 'template_ext': '.tpl'}]
+
+"let g:vimwiki_list = [{
+"	\ 'path': $WIKI,
+"	\ 'template_path': '$WIKI/stuff/',
+"	\ 'template_default': 'default',
+"	\ 'syntax': 'markdown',
+"	\ 'ext': '.md',
+"	\ 'path_html': $WIKI_HTML,
+"	\ 'custom_wiki2html': 'vimwiki_markdown',
+"	\ 'template_ext': '.html'}]
+
+
+let g:vimwiki_global_ext = 0
+
 set encoding=utf-8
 "au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 "au BufNewFile,BufRead *.py
@@ -76,16 +70,8 @@ set encoding=utf-8
 "    \ set autoindent
 "    \ set fileformat=unix
 
-"color dracula
-"colorscheme dracula
-
 set background=dark
 let g:gruvbox_contrast_dark = "hard"
-"let g:gruvbox_improved_strings = "1"
-"let g:gruvbox_invert_tabline = "1"
-"colorscheme gruvbox
-"set list
-"let g:pymode = 1
 
 let g:airline_powerline_fonts = 1 "fonts for powerline
 
@@ -103,7 +89,6 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
 map  <Leader>n  :NERDTreeFind<CR>
-
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -130,9 +115,16 @@ set dir=~/.vim/tmp
 "set colorcolumn=80
 
 syntax on
-"set spelllang=en,it
-"set spell
+set spelllang=en,it,ru
+"set thesaurus+=~/.vim/thesaurus/mthesaur.txt
+"autocmd FileType * setlocal spell
+autocmd FileType gitcommit setlocal spell
+autocmd FileType markdown setlocal spell
+autocmd FileType vimwiki setlocal spell
 set mouse=a
+"set spell
+set complete+=kspell
+set complete+=s
 
 set shiftwidth=4
 set tabstop=4

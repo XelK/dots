@@ -1,6 +1,6 @@
 #!/bin/bash
 
-args="-n -e -f -t -i"
+args="-n -f -t -b -k -i"
 image=$(awk -F "'" '{print $2}' /home/alex/.fehbg)
 #image=$(cat ~/.fehbg |awk '{print $3}'|sed "s/'//g")
 #size=${#a}
