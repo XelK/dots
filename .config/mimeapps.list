@@ -2,7 +2,7 @@
 image/jpeg=firefox-developer-edition.desktop;feh.desktop;
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
 image/png=feh.desktop;
-video/mp4=firefox-developer-edition.desktop;
+video/mp4=firefox-developer-edition.desktop;mpv.desktop;
 video/x-matroska=mpv.desktop;
 text/plain=vim.desktop;
 application/atom+xml=thunderbird.desktop;
@@ -23,5 +23,6 @@ text/plain=vim.desktop
 application/ps=org.pwmt.zathura.desktop
 application/postscript=org.pwmt.zathura.desktop
 application/fb2=org.pwmt.zathura.desktop
+video/mp4=mpv.desktop
 
 [Removed Associations]

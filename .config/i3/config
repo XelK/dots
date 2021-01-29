@@ -84,6 +84,9 @@ bindsym $mod+h focus left
 bindsym $mod+l focus right
 
 
+#exec --no-startup-id "~/.virtualenvs/xelk/bin/i3altlayout"
+
+
 #exec --no-startup-id ~/.config/i3/last_window.sh
 #bindsym $mod+m [con_mark=_last] focus
 

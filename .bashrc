@@ -1,5 +1,6 @@
 # If not running interactively ... get out of here! 
 
+
 [ -z "$PS1" ] && return
 
 ## start ssh-agent once
@@ -10,18 +11,9 @@
 #    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
 #fi
 
-
-#export WIKI="~/docs/wiki"
-#export WIKIHTML="~/docs/wiki_html"
-#export WIKIIMG="~/docs/wiki/img"
-#export TERM=xterm-kitty
-#export PAGER=vimpager
-export FZF_DEFAULT_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
-
 stty -ixon
 
-source /usr/share/fzf/completion.bash
-source /usr/share/fzf/key-bindings.bash
+export FZF_DEFAULT_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 complete -o bashdefault -o default -F _fzf_path_completion zathura
 
 # virtualenv
@@ -29,39 +21,9 @@ source /usr/bin/virtualenvwrapper_lazy.sh
 	
 eval $(keychain --noask --eval --quiet ~/.ssh/keys/*.pem);
 
-
-#export TERMINAL=alacritty
-#export TERM=xterm-256color
-
-
-
-### colored man
-man() {
-    env \
-    LESS_TERMCAP_mb="$(printf "\e[1;31m")" \
-    LESS_TERMCAP_md="$(printf "\e[1;31m")" \
-    LESS_TERMCAP_me="$(printf "\e[0m")" \
-    LESS_TERMCAP_se="$(printf "\e[0m")" \
-    LESS_TERMCAP_so="$(printf "\e[1;44;33m")" \
-    LESS_TERMCAP_ue="$(printf "\e[0m")" \
-    LESS_TERMCAP_us="$(printf "\e[1;32m")" \
-    man "${@}"
-}
-
-
-##termite ctl+t
-##if [[ $TERM == xterm-termite ]]; then
-
-#if [[ $TERM == xterm-256color ]]; then
-#  . /etc/profile.d/vte.sh
-#  __vte_prompt_command
-#fi
-
 ##### ssh tmux windows name ######
 
 ss() {
-	#ssh $(cat .ssh/known_hosts|awk -F ',' '{print $1}'|awk -F ' ' '{print $1}'|fzf)
-	#ssh $(cat .ssh/hosts|fzf)
 	ssh $(cat .ssh/hosts|fzf|awk -F "-" '{print $1}')
 }
 
@@ -71,14 +33,7 @@ XDG_CONFIG_HOME=$HOME/.config
 XDG_CACHE_HOME=$HOME/.cache
 XDG_DATA_HOME=$HOME/.local/share
 # Enable programmable completion features.
-if [ -f /usr/share/bash-completion/bash_completion ]; then
-    source /usr/share/bash-completion/bash_completion
-fi
-
-export EDITOR=vim
-export VISUAL=vim
-export MOZ_X11_EGL=1 #need for firefox hardware video decode
-export BROWSER=firefox-developer-edition
+[[ -f /usr/share/bash-completion/bash_completion ]]  && source /usr/share/bash-completion/bash_completion
 
 complete -cf sudo
 
@@ -101,14 +56,13 @@ shopt -s checkwinsize
 force_color_prompt=yes # should be on the output of commands, not on the prompt
 
 # Add bash aliases.
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
-fi
+[[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
 
 export PS1="\[\033[38;5;1m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]\[\033[38;5;6m\]\H\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;11m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \t\n>\[$(tput sgr0)\]"
+
 ##### git promt to bash shell  ####
 ### source: git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1 ###
 GIT_PROMPT_ONLY_IN_REPO=1
 source ~/.bash-git-prompt/gitprompt.sh
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[[ -f ~/.fzf.bash ]] && source ~/.fzf.bash

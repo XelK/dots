@@ -20,7 +20,7 @@ alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias ll='ls -alF --color'
+alias ll='ls -alsF --color'
 alias c='cd -'
 #alias s="ssh $(cat .ssh/known_hosts|awk -F ',' '{print $1}'|fzf)"
 alias tailf="tail -f"
@@ -41,7 +41,7 @@ alias gl="git log --graph --oneline --decorate --all"
 ####GIT ALIAS ###
 
 
-alias vmw="vim -c VimwikiIndex"
+alias vmw="nvim -c VimwikiIndex"
 
 
 alias a.check_ssl='check_ssl() { curl -vvI "$1" ;}; check_ssl '
