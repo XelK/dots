@@ -45,3 +45,11 @@ alias vmw="nvim -c VimwikiIndex"
 
 
 alias a.check_ssl='check_ssl() { curl -vvI "$1" ;}; check_ssl '
+
+
+function def() {
+		sdcv -n --utf8-output --color "$@" 2>&1 | \
+				fold --width=$(tput cols) | \
+					less -FRX
+		
+}

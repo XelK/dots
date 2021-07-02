@@ -4,8 +4,9 @@ application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
 image/png=feh.desktop;
 video/mp4=firefox-developer-edition.desktop;mpv.desktop;
 video/x-matroska=mpv.desktop;
-text/plain=vim.desktop;
+text/plain=mpv.desktop;firefox-developer-edition.desktop;visual-studio-code.desktop;vim.desktop;
 application/atom+xml=thunderbird.desktop;
+application/octet-stream=visual-studio-code.desktop;
 
 [Default Applications]
 image/jpeg=feh.desktop
@@ -19,10 +20,13 @@ x-scheme-handler/unknown=firefox-developer-edition.desktop
 video/x-matroska=mpv.desktop
 x-scheme-handler/msteams=teams.desktop
 x-scheme-handler/etcher=balena-etcher-electron.desktop
-text/plain=vim.desktop
+text/plain=mpv.desktop
 application/ps=org.pwmt.zathura.desktop
 application/postscript=org.pwmt.zathura.desktop
 application/fb2=org.pwmt.zathura.desktop
 video/mp4=mpv.desktop
+x-scheme-handler/eclipse+installer=_home_alex_downloads_eclipse_eclipse-installer_.desktop
+x-scheme-handler/eclipse+command x-scheme-handler/eclipse+mpc=_home_alex_eclipse_java-2021-03_eclipse_.desktop
+x-scheme-handler/eclipse+mpc x-scheme-handler/eclipse+command=_home_alex_eclipse_java-2021-03_eclipse_.desktop
 
 [Removed Associations]

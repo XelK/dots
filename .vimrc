@@ -1,6 +1,8 @@
 au! BufNewFile,BufRead *.asm set ff=dos
 set nocompatible
 
+imap jj <Esc>
+
 call plug#begin('$HOME/.vim/plugged')
 
 Plug 'vim-airline/vim-airline'
@@ -131,7 +133,7 @@ set tabstop=4
 "set expandtab           " tabs are spaces
 "set smarttab
 
-set scrolloff=999
+"set scrolloff=999
 
 set encoding=utf-8
 

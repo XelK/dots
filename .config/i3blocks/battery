@@ -15,15 +15,15 @@ if [[ "$LEVEL" -gt 80 ]];
 elif [[ "$LEVEL" -gt 60 &&  "$LEVEL" -lt 81 ]];
 	then 
 		ICON=""  
-		color=$white
+		#color=$white
 elif [[ "$LEVEL" -gt 40 &&  "$LEVEL" -lt 61 ]]; 
 	then 
 		ICON=""
-		color=$yellow
+		color=$white
 elif [[ "$LEVEL" -gt 20 &&  "$LEVEL" -lt 41 ]]; 
 	then 
 		ICON=""
-		color=$orange
+		color=$white
 elif [[ "$LEVEL" -lt 21 ]];
 	then 
 		ICON=""
