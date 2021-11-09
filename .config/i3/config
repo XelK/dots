@@ -66,10 +66,7 @@ bindsym $mod+Page_Up exec "amixer set Master 5%+ unmute && notify-send 'Volume U
 bindsym $mod+Page_Down exec "amixer set Master 5%- unmute && notify-send 'Volume Down'"
 
 
-#bindsym $mod+d exec --no-startup-id rofi -show run -show-icons
-bindsym $mod+d exec --no-startup-id rofi -show combi 
-bindsym $mod+a exec --no-startup-id rofi -show window 
-#bindsym $mod+a exec --no-startup-id "rofi -show drun -font \\"DejaVu 9\\" -run-shell-command '{terminal} -e \\" {cmd}; read -n 1 -s\\"'"
+bindsym $mod+d exec rofi -show combi
 
 set $kitty_start tmux new-window -t 'main' && kitty tmux attach || kitty tmux new-session -A -s main ranger 
 set $kitty_attach tmux new-window -t 'main' && kitty tmux attach || kitty tmux new-session -A -s main ranger 
@@ -139,11 +136,11 @@ bindsym $mod+e layout toggle split
 bindsym $mod+y layout toggle all
 
 # Toggle floating/tiling
-bindsym $mod+t floating toggle
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+space floating toggle
+
+bindsym $mod+t move position center
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+space focus mode_toggle
 # focus the parent container
 bindsym $mod+p focus parent
 #border changing
@@ -191,7 +188,7 @@ bindsym XF86MonBrightnessDown exec "light -U 5"
 bindsym XF86MonBrightnessUp exec "light -A 5"
 #### Bind Keys ############################################################################################
 
-set $nextMonitor left
+set $nextMonitor up
 bindsym $mod+Shift+M move workspace to output $nextMonitor
 
 mode "$mode_xrandr" {
@@ -348,7 +345,7 @@ exec thunderbird &
 exec $kitty_start
 exec libinput-gestures
 exec_always --no-startup-id sh ~/.fehbg
-#exec_always --no-startup-id picom -b 
+exec_always --no-startup-id picom -b 
 exec --no-startup-id /usr/bin/xset b off
 
 exec --no-startup-id firefox-developer-edition -P web --class firefox-web

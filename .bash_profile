@@ -25,6 +25,7 @@ export STARDICT_DATA_DIR=$XDG_DATA_HOME
 export HISTCONTROL=ignoredups:erasedups
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
+source .bash_vars
 
 if ! pidof i3 > /dev/null; then
 	startx
