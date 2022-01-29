@@ -13,7 +13,7 @@ automake
 aws-cli
 base
 bash-completion
-bc
+bat
 bcprov
 bind
 binutils
@@ -28,7 +28,7 @@ cmake
 cpupower
 crda
 ctags
-cups
+curlie
 dbus-python
 ddd
 dhcpcd
@@ -36,6 +36,7 @@ dialog
 discount
 docker
 docker-compose
+doctl
 dos2unix
 doxygen
 dsniff
@@ -58,10 +59,11 @@ gcc
 gdb
 geckodriver
 git
+gitkraken
 gitlab-runner
 gnu-netcat
 go
-google-chrome
+gparted
 graphviz
 groff
 gruvbox-material-gtk-theme-git
@@ -74,6 +76,7 @@ gvfs
 gvfs-mtp
 gvfs-nfs
 handbrake
+helm
 heroku-cli-bin
 highlight
 htop
@@ -98,6 +101,7 @@ junit
 keepassxc
 keychain
 kitty
+kubectl
 lazygit
 lc3tools
 libcmrt
@@ -121,11 +125,13 @@ maim
 make
 man-db
 man-pages
+meld
 mingw-w64-gcc
 mpv
 mtools
 mupdf
 mupdf-tools
+mysql-workbench
 neofetch
 neovim
 net-tools
@@ -137,7 +143,6 @@ npm
 nss-mdns
 ntfs-3g
 nvme-cli
-obsidian-appimage
 openjdk-doc
 openjdk-src
 openjdk8-doc
@@ -157,6 +162,7 @@ pkgconf
 pomotroid-bin
 poppler
 powertop
+pulseaudio
 pv
 pycharm-community-edition
 python
@@ -168,6 +174,7 @@ ranger
 rdesktop
 redshift
 reflector
+robo3t-bin
 rofi
 rsync
 sdcv
@@ -235,6 +242,7 @@ xorg-xev
 xorg-xinit
 xorg-xinput
 xreader
+xtitle
 youtube-dl
 zathura
 zathura-pdf-mupdf

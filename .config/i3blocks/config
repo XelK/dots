@@ -4,6 +4,11 @@ command=$HOME/.config/i3blocks/$BLOCK_NAME
 separator_block_width=10
 markup=pango
 
+[window]
+command=xtitle -s | cat
+interval=persist
+#align=left
+
 [spotify]
 max_width=20
 interval=5
@@ -13,7 +18,7 @@ interval=5
 interval=3600
 
 [keyboard]
-interval=3
+interval=1
 
 [volume]
 LABEL= 

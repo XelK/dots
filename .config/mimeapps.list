@@ -31,5 +31,6 @@ x-scheme-handler/eclipse+installer=_home_alex_downloads_eclipse_eclipse-installe
 x-scheme-handler/eclipse+command x-scheme-handler/eclipse+mpc=_home_alex_eclipse_java-2021-03_eclipse_.desktop
 x-scheme-handler/eclipse+mpc x-scheme-handler/eclipse+command=_home_alex_eclipse_java-2021-03_eclipse_.desktop
 image/gif=feh.desktop
+x-scheme-handler/gitkraken=GitKraken.desktop
 
 [Removed Associations]

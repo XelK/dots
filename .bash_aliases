@@ -32,6 +32,8 @@ alias a.disable.bluetooth="sudo rfkill block bluetooth"
 alias a.randp="< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo"
 alias a.ssh_no_key="ssh -o PreferredAuthentications=keyboard-interactive,password -o PubkeyAuthentication=no"   
 
+alias a.img="~/docs/src/im_mv"
+
 ####GIT ALIAS ###
 alias ga="git add ./*"
 alias gs="git status"

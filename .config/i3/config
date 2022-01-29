@@ -50,13 +50,20 @@ bindsym --release $mod+m exec $SRC/screen.sh
 # kill focused window
 bindsym $mod+Shift+q kill 
 
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ unmute $PrintVolume
-bindsym XF86AudioLowerVolume exec amixer set Master 5%- unmute $PrintVolume
-bindsym XF86AudioMute exec amixer set Master toggle
+#bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ unmute $PrintVolume
+#bindsym XF86AudioLowerVolume exec amixer set Master 5%- unmute $PrintVolume
+#bindsym XF86AudioMute exec amixer set Master toggle
+
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ +5%"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ -5%"
+bindsym XF86AudioMute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+
 bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
 bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
 bindsym XF86AudioPrev exec  "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 bindsym XF86AudioNext exec  "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
+bindsym Print exec "img=~/img/screenshots/$(date +%s).png && maim -i $(xdotool getactivewindow) $img && notify-send 'screenshot' $img && echo $img|xclip -selection clipboard"
 
 # Anne Pro keyboard shourtcats
 bindsym $mod+Delete exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause && notify-send 'Play/Stop'"
@@ -335,7 +342,7 @@ client.urgent           $red 		$red 		$black 		$red 			$red
 
 ##### Start Up ############################################################################################
 exec dunst &
-exec --no-startup-id redshift-gtk
+exec --no-startup-id redshift-gtk -c .config/redshift/redshift.conf
 #exec --no-startup-id nextcloud
 #exec blueman-applet &
 exec keepassxc &
