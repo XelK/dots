@@ -34,6 +34,13 @@ alias a.ssh_no_key="ssh -o PreferredAuthentications=keyboard-interactive,passwor
 
 alias a.img="~/docs/src/im_mv"
 
+a.md2html(){
+	for f in `ls *.md`; do 
+		output=`basename -s .md $f`;
+		md2html $f>$output.html; 
+	done
+}
+
 ####GIT ALIAS ###
 alias ga="git add ./*"
 alias gs="git status"
