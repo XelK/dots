@@ -7,7 +7,6 @@ arc-icon-theme
 arc-solid-gtk-theme
 atkinson-hyperlegible-fonts
 atool
-atril
 autoconf
 automake
 aws-cli
@@ -70,7 +69,6 @@ gruvbox-material-gtk-theme-git
 gruvbox-material-icon-theme-git
 gtk-theme-arc-gruvbox-git
 gtksourceview3
-gummi
 guvcview
 gvfs
 gvfs-mtp
@@ -119,7 +117,6 @@ linux-zen
 linux-zen-headers
 lvm2
 lxappearance
-lyx
 m4
 maim
 make
@@ -143,6 +140,7 @@ npm
 nss-mdns
 ntfs-3g
 nvme-cli
+obsidian
 openjdk-doc
 openjdk-src
 openjdk8-doc

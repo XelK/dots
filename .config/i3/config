@@ -360,6 +360,7 @@ exec --no-startup-id firefox-developer-edition -P web --class firefox-web
 #exec --no-startup-id pcmanfm
 exec --no-startup-id spotify
 #exec --no-startup-id code
+exec --no-startup-id obsidian
 ##### Start Up ############################################################################################
 
 
