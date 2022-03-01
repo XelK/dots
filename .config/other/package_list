@@ -9,7 +9,7 @@ atkinson-hyperlegible-fonts
 atool
 autoconf
 automake
-aws-cli
+aws-cli-v2-bin
 base
 bash-completion
 bat
@@ -163,6 +163,8 @@ powertop
 pulseaudio
 pv
 pycharm-community-edition
+pyenv
+pyenv-virtualenv
 python
 python-pip
 python-pudb
@@ -186,6 +188,7 @@ strace
 sudo
 tcpdump
 terminus-font
+terraform
 texinfo
 texlive-bibtexextra
 texlive-core
@@ -220,6 +223,7 @@ vde2
 vim
 vim-plug
 vimpager
+virt-manager
 virtualbox
 visual-studio-code-bin
 vym
